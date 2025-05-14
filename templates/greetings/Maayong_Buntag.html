@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maayong Buntag</title>
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="/static/styles.css">
 </head>
 <body>
     <div class="header">CSTW</div>
@@ -12,10 +12,13 @@
         <div class="label">English:</div>
         <div class="english">Good Morning!</div>
         <div class="label">Cebuano:</div>
-        <div class="cebuano">
-            Maayong Buntag! <span class="sound-icon">🔊</span>
+        <div class="cebuano">Maayong Buntag! 
         </div>
-        <a href="#" class="next-button">Next</a>
+        <span class="sound-icon">🔊</span>
+        <a href="#" class="next-button" id="nextBtn">Next</a>
+        <button id="stopBtn" style="display: none;">Stop</button>
     </div>
+
+    <script src="/static/record.js"></script>
 </body>
 </html>
