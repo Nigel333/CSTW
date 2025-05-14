@@ -1,5 +1,6 @@
 from flask import Flask, request, render_template
 import os
+import subprocess
 from datetime import datetime
 
 app = Flask(__name__)
@@ -52,7 +53,16 @@ def upload_audio():
     filepath = os.path.join(UPLOAD_FOLDER, filename)
     file.save(filepath)
     print(f"Saved: {filepath}")
-    return 'Audio uploaded successfully', 200
+    
+    try:
+        subprocess.run(["./run.sh"], check=True, shell=True)
+        print("Shell script executed successfully")
+    except subprocess.CalledProcessError as e:
+        print(f"Error running script: {e}")
+        return f"Error running script: {e}", 500
+
+    return 'Audio uploaded and script executed successfully', 200
+    
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=3000)
+    app.run(host='0.0.0.0', port=5000)
