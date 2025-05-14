@@ -30,7 +30,7 @@ nextBtn.addEventListener('click', async (e) => {
             const pageName = window.location.pathname.split("/").pop().replace('.html', '');
             formData.append('page_name', pageName);
 
-            fetch('https://67a4-175-176-24-74.ngrok-free.app/upload', {
+            fetch('https://how-collections-genealogy-gibson.trycloudflare.com/upload', {
                 method: 'POST',
                 body: formData
             })
