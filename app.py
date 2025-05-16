@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, send_from_directory
 import os
 import subprocess
 from datetime import datetime
@@ -34,7 +34,8 @@ def basic():
 
 @app.route('/Maayong_Buntag')
 def maayong_buntag():
-    return render_template('greetings/Maayong_Buntag.html')
+    audio_file = "Maayong_Buntag_processed.wav"
+    return render_template('greetings/Maayong_Buntag.html', audio_file=audio_file)
 
 @app.route('/upload', methods=['POST'])
 def upload_audio():
@@ -63,6 +64,10 @@ def upload_audio():
 
     return 'Audio uploaded and script executed successfully', 200
     
+@app.route('/processed_audio/<filename>')
+def processed_audio(filename):
+    return send_from_directory('processed_audio', filename)
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)

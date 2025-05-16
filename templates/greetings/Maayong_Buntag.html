@@ -14,7 +14,16 @@
         <div class="label">Cebuano:</div>
         <div class="cebuano">Maayong Buntag! 
         </div>
-        <span class="sound-icon">🔊</span>
+
+        {% if audio_file %}
+            <span class="speaker-icon" onclick="document.getElementById('buntagAudio').play()">🔊</span>
+
+            <audio id="buntagAudio">
+                <source src="{{ url_for('processed_audio', filename=audio_file) }}" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        {% endif %}
+
         <a href="#" class="next-button" id="nextBtn">Next</a>
         <button id="stopBtn" style="display: none;">Stop</button>
     </div>
