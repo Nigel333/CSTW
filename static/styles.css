@@ -86,3 +86,9 @@ body {
     background-color: #ddd;
     color: #333;
 }
+.speaker-icon {
+    font-size: 30px;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 10px;
+}

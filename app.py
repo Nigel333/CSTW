@@ -34,7 +34,7 @@ def basic():
 
 @app.route('/Maayong_Buntag')
 def maayong_buntag():
-    audio_file = "Maayong_Buntag_processed.wav"
+    audio_file = "Maayong_Buntag.wav"
     return render_template('greetings/Maayong_Buntag.html', audio_file=audio_file)
 
 @app.route('/upload', methods=['POST'])
