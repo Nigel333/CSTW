@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maayong Adlaw</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="header">CSTW</div>
+    <div class="word-container">
+        <div class="label">English:</div>
+        <div class="english">Good Day!</div>
+        <div class="label">Cebuano:</div>
+        <div class="cebuano">Maayong Adlaw!</div>
+
+        {% if audio_file %}
+            <span class="speaker-icon" onclick="document.getElementById('SampleAudio').play()">🔊</span>
+
+            <audio id="SampleAudio">
+                <source src="{{ url_for('processed_audio', filename=audio_file) }}" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        {% endif %}
+
+        <a href="#" class="next-button" id="nextBtn">Next</a>
+        <button id="stopBtn" style="display: none;">Stop</button>
+    </div>
+
+    <script src="/static/record.js"></script>
+</body>
+</html>
