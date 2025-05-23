@@ -39,6 +39,26 @@ body {
     max-width: 380px;
 }
 
+.menuback-button {
+    background-color: white;
+    color: black;
+    padding: 15px 30px;
+    border-radius: 15px;
+    text-decoration: none;
+    font-size: 18px;
+    width: 180px;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+}
+.menuback-button:hover {
+    background-color: #ddd;
+    color: #333;
+}
 
 /* actual word page*/
 .word-container {
@@ -83,6 +103,21 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 .next-button:hover {
+    background-color: #ddd;
+    color: #333;
+}
+.stop-button {
+    background-color: white;
+    color: black;
+    padding: 15px 30px;
+    border-radius: 15px;
+    text-decoration: none;
+    font-size: 18px;
+    width: 180px;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+.stop-button:hover {
     background-color: #ddd;
     color: #333;
 }
