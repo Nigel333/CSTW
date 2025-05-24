@@ -1,7 +1,8 @@
-from flask import Flask, request, render_template, send_from_directory
+from flask import Flask, request, render_template, send_from_directory, jsonify
 import os
 import subprocess
 from datetime import datetime
+from syllables import syllable_map
 
 app = Flask(__name__)
 UPLOAD_FOLDER = 'uploads'
@@ -349,7 +350,20 @@ def upload_audio():
         print(f"Error running script: {e}")
         return f"Error running script: {e}", 500
 
-    return 'Audio uploaded and script executed successfully', 200
+    result_file = os.path.join('results/', f"{page_name}_result.txt")
+    try:
+        with open(result_file, 'r') as f:
+            color_code = f.read().strip()
+    except FileNotFoundError:
+        return 'Result file not found', 500
+    
+    syllables = syllable_map.get(page_name.lower(), [])
+
+    return jsonify({
+        "message": "Audio uploaded and script executed successfully",
+        "color_code": color_code,
+        "syllables": syllables
+    })
     
 @app.route('/processed_audio/<filename>')
 def processed_audio(filename):

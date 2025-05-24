@@ -34,9 +34,24 @@ nextBtn.addEventListener('click', async (e) => {
                 method: 'POST',
                 body: formData
             })
-            .then(response => response.text())
+            .then(response => response.json())
             .then(data => {
                 console.log('Upload success:', data);
+
+                const code = data.color_code; 
+                const syllables = data.syllables;
+                const colors = {
+                    "1": "#90ee90", // green
+                    "2": "#ff4c4c", // red
+                    "3": "#f5d142"  // yellow
+                };
+
+                const colored = syllables.map((syll, i) => {
+                    const color = colors[code[i]] || "white";
+                    return `<span style="color:${color}">${syll}</span>`;
+                }).join('');
+
+                document.querySelector(".cebuano").innerHTML = colored;
             })
             .catch(error => {
                 console.error('Upload error:', error);
