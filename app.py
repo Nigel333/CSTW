@@ -357,8 +357,8 @@ def upload_audio():
     except FileNotFoundError:
         return 'Result file not found', 500
     
-    syllables = syllable_map.get(page_name.lower(), [])
-
+    syllables = syllable_map.get(page_name, [])
+    print(f"pagename: {syllables}")
     return jsonify({
         "message": "Audio uploaded and script executed successfully",
         "color_code": color_code,
