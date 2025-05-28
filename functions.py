@@ -1,9 +1,12 @@
 # Website functions
 
-from app import db
+from app import db, USERDATA_FOLDER
+from pathlib import Path
 import bcrypt
 import base64
 import re
+import json
+import os
 
 def getID(inc):
     cursor = db.cursor()
@@ -78,7 +81,7 @@ def checkLogin(username, password):
         #print(result[5].encode('utf-8'))
         #print(password.encode('utf-8'))
         if str(hashed)==str(result[5]):
-            return [username,1] # orginally result[2] isAdmin
+            return [username,1]
         
     return [username,-1] # invalid login
 
@@ -102,3 +105,43 @@ def retrieveData(username):
         "last_name": result[3],
         "email": result[4],
     }
+    
+
+# Json functions
+
+# Get file path 
+def getJsonPath(username):
+    # Sanitize username for safe filename
+    safe_username = "".join(c for c in username if c.isalnum() or c in "._-")
+    return os.path.join(USERDATA_FOLDER, f"{safe_username}.json")
+
+# Load user data
+def loadJson(username):
+    file_path = getJsonPath(username)
+    
+    if os.path.exists(file_path):
+        try:
+            with open(file_path, 'r') as f:
+                return json.load(f)
+        except (json.JSONDecodeError, FileNotFoundError):
+            pass
+    
+    # Return default structure if file doesn't exist
+    return {
+        "user": username,
+        "progress": {}
+    }
+
+# Save user data
+def saveJsonData(username, data):
+    file_path = getJsonPath(username)
+
+    with open(file_path, 'w') as f:
+        json.dump(data, f, indent=4)
+
+# Update progress
+def updateProgress(username, word, score):
+    data = loadJson(username)
+    data["progress"][word] = score
+    saveJsonData(username, data)
+    return data

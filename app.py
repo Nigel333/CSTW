@@ -178,7 +178,7 @@ def logout():
     name = session.get('username')
     logger.info(f"User [{name}] logged out")
     session.clear()
-    return make_response(render_template('/home.html'))
+    return redirect('/') #make_response(render_template('/home.html'))
 
 @app.route('/register')
 def register():
@@ -199,6 +199,8 @@ def submit():
     
     if flag == 1:
         insertNewUser(idnum, username, firstName, lastName, email, password)
+        user_folder = f"{USERDATA_FOLDER}/audio/{username}"
+        os.makedirs(user_folder)
         logger.info(f"User [{username}] was registered")
         return render_template('login.html', username=username)
     if flag == 0:
@@ -585,6 +587,7 @@ def sila_akoang_mga_anak():
 
 
 @app.route('/upload', methods=['POST'])
+@login_required
 def upload_audio():
     if 'audio' not in request.files:
         return 'No audio file part', 400
@@ -596,20 +599,29 @@ def upload_audio():
     page_name = request.form.get('page_name')
     if not page_name:
         return 'No page name provided', 400
+    
+    name = session.get('username')
+    user_folder = f"{USERDATA_FOLDER}/audio/{name}/{page_name}"
+    
+    os.makedirs(user_folder, exist_ok=True)
 
     filename = f"{page_name}99m.wav" # add gender here
-    filepath = os.path.join(UPLOAD_FOLDER, filename)
+    filepath = os.path.join(user_folder, filename)
     file.save(filepath)
     print(f"Saved: {filepath}")
     
+    '''
+    # Insert model response maker script code here
     try:
         subprocess.run(["./run.sh"], check=True, shell=True)
         print("Shell script executed successfully")
     except subprocess.CalledProcessError as e:
         print(f"Error running script: {e}")
         return f"Error running script: {e}", 500
+    '''
 
-    result_file = os.path.join('results/', f"{page_name}_result.txt")
+    # RESULT FILE SHOULD BE {user}_result.txt or any way to specify responses to correct user, to be corrected
+    result_file = os.path.join('results/', f"{page_name}_result.txt") 
     try:
         with open(result_file, 'r') as f:
             color_code = f.read().strip()
@@ -618,12 +630,18 @@ def upload_audio():
     
     syllables = syllable_map.get(page_name, [])
     print(f"pagename: {syllables}")
+    print(f"progress: {color_code}")
+    
+    # Update user JSON
+    updateProgress(name, page_name, color_code)
+    
     return jsonify({
         "message": "Audio uploaded and script executed successfully",
         "color_code": color_code,
         "syllables": syllables
     })
-    
+
+# ?
 @app.route('/processed_audio/<filename>')
 def processed_audio(filename):
     return send_from_directory('processed_audio', filename)
