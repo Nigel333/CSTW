@@ -1,10 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Abel:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mogra&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Knewave&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
+
 body {
     background-color: #0047ab; /* Deep blue background */
     color: white;
-    font-family: Arial, sans-serif;
+    font-family: "Poetsen One", sans-serif;
     text-align: center;
     padding: 20px;
 }
+.title {
+    text-align: center;
+    font-size: 96px;
+    margin-bottom: 50px;
+    color: white;
+}
+
 .header {
     text-align: left;
     font-size: 24px;
