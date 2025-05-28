@@ -1,18 +1,16 @@
 from flask import Flask, request, redirect, render_template,make_response, session, send_from_directory, jsonify
 from functools import wraps
 import os
-import subprocess
 import logging
 from logging.handlers import RotatingFileHandler
 import time
 import threading
-import traceback
 import mysql.connector
 from functions import * #functions.py
 from datetime import datetime, timedelta
 from syllables import syllable_map
 
-DEBUG_FLAG = True #localhost debuggging only
+DEBUG_FLAG = False #localhost debuggging only
 TIMEOUT_DURATION = timedelta(seconds=300) # Session timeout time
 MAX_LOGIN_ATTEMPTS = 5  # Maximum failed login attempts before timeout
 LOCKOUT_DURATION = 20  # Lockout duration in seconds
@@ -24,9 +22,8 @@ db = mysql.connector.connect(
     host="localhost",
     user="root",
     password="secdevS15",
-    database="secdevdb"
+    database="cwts"
 )
-print(db)
 
 # Make directories
 UPLOAD_FOLDER = 'uploads'
@@ -36,8 +33,10 @@ for folder in [UPLOAD_FOLDER, LOG_FOLDER, USERDATA_FOLDER]:
     os.makedirs(folder, exist_ok=True)
 
 # Logging config
-logger = logging.getLogger('budget_tracker')
+logger = logging.getLogger('cebuano_tutor')
+logger.handlers.clear()
 logger.setLevel(logging.INFO)
+logger.propagate = False
 
 # Rotating file handler (10MB max size, keep 3 backup files)
 file_handler = RotatingFileHandler(
@@ -55,6 +54,11 @@ if DEBUG_FLAG:
     console_handler = logging.StreamHandler()
     console_handler.setFormatter(formatter)
     logger.addHandler(console_handler)
+
+# Add handlers to logger
+logger.handlers.clear()
+logger.addHandler(file_handler)
+logger.propagate = False
 
 # Session settings
 app.config['SECRET_KEY'] = os.urandom(12)  # Secure random key
@@ -608,7 +612,7 @@ def upload_audio():
     filename = f"{page_name}99m.wav" # add gender here
     filepath = os.path.join(user_folder, filename)
     file.save(filepath)
-    print(f"Saved: {filepath}")
+    logger.info(f"Data by user [{name}] saved: {filepath}")
     
     '''
     # Insert model response maker script code here
@@ -629,11 +633,12 @@ def upload_audio():
         return 'Result file not found', 500
     
     syllables = syllable_map.get(page_name, [])
-    print(f"pagename: {syllables}")
-    print(f"progress: {color_code}")
+    #print(f"pagename: {syllables}")
+    #print(f"progress: {color_code}")
     
     # Update user JSON
     updateProgress(name, page_name, color_code)
+    logger.info(f"User [{name}] progress updated.")
     
     return jsonify({
         "message": "Audio uploaded and script executed successfully",
