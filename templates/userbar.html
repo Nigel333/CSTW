@@ -1,0 +1,5 @@
+{% if session.get('username') %}
+<p class="user-bar">
+    Welcome, {{ session.get('username') }} <a class="button" href="/logout">Logout</a>
+</p>
+{% endif %}

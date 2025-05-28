@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+
+    <link rel="icon" href="../static/image/logo.png">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../static/register.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script type="text/Javascript">
+            function checkEmail()
+            {
+                const email= document.getElementById("email");
+                const submit=document.getElementById("submit-btn");
+                const labely=document.getElementById("labely");
+                console.log("checking email");
+                var re=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if(re.test(email.value))
+                {
+                    labely.textContent="Email";
+                    labely.style.color="green";
+                    submit.disabled=false;
+                }
+                else
+                {
+                    labely.textContent="Email not Valid";
+                    labely.style.color="red";
+                    submit.disabled=true;
+                }
+                    
+            }
+    </script>
+</head>
+<body>
+    <div class="rectangle">
+        <form action="/submitRegister" method="post">
+            <h1>SIGN UP</h1>
+            <h4 style="color:red; text-align:center;">
+                {{error_message}}
+            </h4>
+        <div class="user-details">
+            <div class="input-box">
+                <input text="text"  name="firstName" required value={{firstName}}>
+                <span></span>
+                <i class="bx bxs-user"></i>
+                <label>First Name</label>
+            </div>
+            <div class="input-box">
+                <input type="text"  name="lastName" required value={{lastName}}>
+                <span></span>
+                <i class='bx bxs-user'></i>
+                <label>Last Name</label>
+            </div>
+            <div class="input-box">
+                <input type="text"  name="username" required value={{username}}>
+                <span></span>
+                <i class='bx bxs-user'></i>
+                <label>Username</label>
+            </div>
+            <div class="input-box">
+                <input type="text" name="email" onchange="checkEmail()" id="email" value={{email}}>
+                <span></span>
+                <i class='bx bxs-envelope' ></i>
+                <label id="labely">Email</label>
+            </div>
+            <div class="input-box">
+                <input type="password" name="password" minlength="8" required>
+                <span></span>
+                <i class='bx bxs-lock-alt'></i>
+                <label>Password</label>
+            </div>
+            <div class="input-box">
+                <input type="password" name="confirmPassword" required>
+                <span></span>
+                <i class='bx bxs-lock-alt'></i>
+                <label>Confirm Password</label>
+            </div>
+        </div>
+                <input type="submit" value="SIGN UP" id="submit-btn">
+
+            <div class="new-user">
+                Already have an account? <a href="/login">Sign-in</a>
+            </div>
+        </form>
+
+        <div id="footer-text">By clicking the Sign Up button, you agree to our <a href="terms_and_conditions.html">Terms and Conditions</a> and <a href="privacy_policy.html">Privacy Policy</a></div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <link rel="icon" href="../static/image/logo.png">
+    <link rel="stylesheet" href="../static/login.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="rectangle">
+        <form action="/submit_login" method="post" >
+            <h1>LOG IN</h1>
+            <h4 style="color:red; text-align:center;">
+                {{error_message}}
+            </h4>
+            <div class="input-box">
+                <input type="text" name="username" value={{username}}>
+                <span></span>
+                <i class='bx bxs-user'></i>
+                <label>Username</label>
+            </div>
+            <div class="input-box">
+                <input type="password" name="password">
+                <span></span>
+                <i class='bx bxs-lock-alt'></i>
+                <label>Password</label>
+            </div>
+
+            <div class="forgot">
+                Forgot Password?
+            </div>
+
+            <input type="submit" value="LOG IN">
+
+            <div class="new-user">
+                New User? <a href="/register">Sign-up</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css?family=Abel:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: "Poetsen One", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    align-items: center;
+    background: #0047ab;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    padding-bottom: 100px;
+    padding-top: 50px;
+}
+
+/*----------------------------- FORM CONTAINER -----------------------------*/
+.rectangle {
+    background: whitesmoke;
+    border-radius: 20px;
+    height: 590px;
+    width: 800px;
+}
+
+.rectangle h1 {
+    font-size: 50px;
+    padding: 10px 0;
+    text-align: center;
+}
+
+/*----------------------------- USER DETAILS -----------------------------*/
+.rectangle form .user-details {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.rectangle .input-box {
+    background: transparent;
+    border-bottom: 3px solid lightblue;
+    margin: 30px 20px;
+    position: relative;
+    width: 350px;
+}
+
+.input-box input {
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    height: 40px;
+    outline: none;
+    padding: 0 35px;
+    width: 100%;
+}
+
+.input-box label {
+    color: lightblue;
+    font-size: 20px;
+    left: 35px;
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 0.5s;
+}
+
+.input-box i {
+    color: lightblue;
+    font-size: 20px;
+    left: 5px;
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.input-box span::before {
+    background: skyblue;
+    content: '';
+    height: 2px;
+    left: 0;
+    position: absolute;
+    top: 40px;
+    transition: 0.5s;
+    width: 100%;
+}
+
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
+    color: skyblue;
+    top: -5px;
+}
+
+/*----------------------------- FORGOT PASSWORD -----------------------------*/
+.forgot {
+    color: skyblue;
+    cursor: pointer;
+    font-size: 18px;
+    margin: -20px 0 20px 20px;
+}
+
+.forgot:hover {
+    text-decoration: underline;
+}
+
+/*----------------------------- USER TYPE (RADIO BUTTONS) -----------------------------*/
+.user-type input[type="radio"] {
+    display: none;
+}
+
+.user-type label {
+    align-items: center;
+    color: skyblue;
+    cursor: pointer;
+    display: inline-flex;
+    font-size: 20px;
+    margin: -5px 0px 10px 200px;
+    position: relative;
+}
+
+.user-type label:before {
+    border: 3px solid skyblue;
+    border-radius: 30%;
+    content: "";
+    height: 10px;
+    margin-right: 5px;
+    width: 10px;
+}
+
+input[type="radio"]:checked + label:before {
+    background-color: skyblue; 
+}
+
+/*----------------------------- SUBMIT BUTTON -----------------------------*/
+input[type="submit"] {
+    background: skyblue;
+    border: 3px solid skyblue;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 25px;
+    font-weight: 600;
+    height: 50px;
+    margin: 20px 0px 20px 150px;
+    width: 60%;
+}
+
+input[type="submit"]:hover {
+    border-color: steelblue;
+    transition: 0.5s;
+}
+
+/*----------------------------- NEW USER SIGNUP -----------------------------*/
+.new-user {
+    color: skyblue;
+    font-size: 18px;
+    margin: 5px 0px 23px;
+    text-align: center;
+}
+
+.new-user a {
+    color: steelblue;
+    text-decoration: none;
+}
+
+.new-user a:hover {
+    text-decoration: underline;
+}
+
+/*----------------------------- FOOTER -----------------------------*/
+#footer-text {
+    text-align: center;
+}
