@@ -20,6 +20,9 @@ body {
 .user-bar {
     font-size: 20px;
 }
+.user-bar .button {
+    margin-left: 10px; /* Adjust the value as needed for your desired gap */
+}
 
 .header {
     display: flex;
