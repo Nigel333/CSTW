@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Walo</title>
+    <title>{{ cebuano_text }}</title>
     <link rel="stylesheet" href="/static/styles.css">
 </head>
 <body>
     <div class="header">
         <h1>CSTW</h1>
-        {% include'userbar.html' %}
+        {% include 'userbar.html' %}
     </div>
     <div class="word-container">
         <div class="label">English:</div>
-        <div class="english">Eight</div>
+        <div class="english">{{ english_text }}</div>
         <div class="label">Cebuano:</div>
-        <div class="cebuano">Walo</div>
+        <div class="cebuano">{{ cebuano_text }}</div>
 
         {% if audio_file %}
             <span class="speaker-icon" onclick="document.getElementById('SampleAudio').play()">🔊</span>
@@ -28,7 +28,7 @@
 
         <a href="#" class="next-button" id="nextBtn">Next</a>
         <button class="stop-button" id="stopBtn" style="display: none;">Stop</button>
-        <a href="/numbersBack" class="button">Back</a>
+        <a href="{{ back_url }}" class="button">Back</a>
     </div>
 
     <script src="/static/record.js"></script>

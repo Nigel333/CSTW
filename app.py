@@ -269,326 +269,590 @@ def basicBack():
 @app.route('/Maayong_Buntag')
 @login_required
 def maayong_buntag():
-    audio_file = "Maayong_Buntag.wav"
-    return render_template('greetings/Maayong_Buntag.html', audio_file=audio_file)
+    data = {
+        "audio_file": "Maayong_Buntag.wav",
+        "cebuano_text": "Maayong Buntag!",
+        "english_text": "Good Morning!",
+        "back_url": "/greetingsBack"
+    }
+    return render_template('tutor_template.html', **data)
 
 @app.route('/Maayong_Udto')
 @login_required
 def maayong_udto():
-    audio_file = "Maayong_Udto.wav"
-    return render_template('greetings/Maayong_Udto.html', audio_file=audio_file)
+    data = {
+        "audio_file": "Maayong_Udto.wav",
+        "cebuano_text": "Maayong Udto!",
+        "english_text": "Good Noon!",
+        "back_url": "/greetingsBack"
+    }
+    return render_template('tutor_template.html', **data)
 
 @app.route('/Maayong_Hapon')
 @login_required
 def maayong_hapon():
-    audio_file = "Maayong_Hapon.wav"
-    return render_template('greetings/Maayong_Hapon.html', audio_file=audio_file)
+    data = {
+        "audio_file": "Maayong_Hapon.wav",
+        "cebuano_text": "Maayong Hapon!",
+        "english_text": "Good Afternoon!",
+        "back_url": "/greetingsBack"
+    }
+    return render_template('tutor_template.html', **data)
 
 @app.route('/Maayong_Gabii')
 @login_required
 def maayong_gabii():
-    audio_file = "Maayong_Gabii.wav"
-    return render_template('greetings/Maayong_Gabii.html', audio_file=audio_file)
+    data = {
+        "audio_file": "Maayong_Gabii.wav",
+        "cebuano_text": "Maayong Gabii!",
+        "english_text": "Good Night!",
+        "back_url": "/greetingsBack"
+    }
+    return render_template('tutor_template.html', **data)
 
 @app.route('/Maayong_Adlaw')
 @login_required
 def maayong_adlaw():
-    audio_file = "Maayong_Adlaw.wav"
-    return render_template('greetings/Maayong_Adlaw.html', audio_file=audio_file)
+    data = {
+        "audio_file": "Maayong_Adlaw.wav",
+        "cebuano_text": "Maayong Adlaw!",
+        "english_text": "Good Day!",
+        "back_url": "/greetingsBack"
+    }
+    return render_template('tutor_template.html', **data)
 
 @app.route('/Kumusta_Ka')
 @login_required
 def kumusta_ka():
     audio_file = "Kumusta_Ka.wav"
-    return render_template('greetings/Kumusta_Ka.html', audio_file=audio_file)
+    data = {
+        "audio_file": "Kumusta_Ka.wav",
+        "cebuano_text": "Kumusta ka?",
+        "english_text": "How are you?",
+        "back_url": "/greetingsBack"
+    }
+    return render_template('tutor_template.html', **data)
 
 #Directions routes
 @app.route('/Didto')
 @login_required
 def didto():
-    audio_file = "Didto.wav"
-    return render_template('directions/Didto.html', audio_file=audio_file)
+    data = {
+        "audio_file": "Didto.wav",
+        "cebuano_text": "Didto",
+        "english_text": "Over there (far)",
+        "back_url": "/directionsBack"
+    }
+    return render_template('tutor_template.html', **data)
 
 @app.route('/Dani')
 @login_required
 def dani():
-    audio_file = "Dani.wav"
-    return render_template('directions/Dani.html', audio_file=audio_file)
-
+    data = {
+        "audio_file": "Dani.wav",
+        "cebuano_text": "Dani",
+        "english_text": "Here",
+        "back_url": "/directionsBack"
+    }
+    return render_template('tutor_template.html', **data)
+    
 @app.route('/Wala')
 @login_required
 def wala():
-    audio_file = "Wala.wav"
-    return render_template('directions/Wala.html', audio_file=audio_file)
-
+    data = {
+        "audio_file": "Wala.wav",
+        "cebuano_text": "Wala",
+        "english_text": "Left",
+        "back_url": "/directionsBack"
+    }
+    return render_template('tutor_template.html', **data)
+    
 @app.route('/Too')
 @login_required
 def too():
-    audio_file = "Too.wav"
-    return render_template('directions/Too.html', audio_file=audio_file)
-
+    data = {
+        "audio_file": "Too.wav",
+        "cebuano_text": "Too",
+        "english_text": "Right",
+        "back_url": "/directionsBack"
+    }
+    return render_template('tutor_template.html', **data)
+    
 @app.route('/Asa_Ang')
 @login_required
 def asa_ang():
-    audio_file = "asa_ang.wav"
-    return render_template('directions/Asa_Ang.html', audio_file=audio_file)
-
+    data = {
+        "audio_file": "Asa_Ang.wav",
+        "cebuano_text": "Asa Ang",
+        "english_text": "Where is",
+        "back_url": "/directionsBack"
+    }
+    return render_template('tutor_template.html', **data)
+    
 @app.route('/Taas')
 @login_required
 def taas():
-    audio_file = "Taas.wav"
-    return render_template('directions/Taas.html', audio_file=audio_file)
+    data = {
+        "audio_file": "Taas.wav",
+        "cebuano_text": "Taas",
+        "english_text": "Up",
+        "back_url": "/directionsBack"
+    }
+    return render_template('tutor_template.html', **data)
 
 @app.route('/Ubos')
 @login_required
 def ubos():
-    audio_file = "Ubos.wav"
-    return render_template('directions/Ubos.html', audio_file=audio_file)
-
+    data = {
+        "audio_file": "Ubos.wav",
+        "cebuano_text": "Ubos",
+        "english_text": "Down",
+        "back_url": "/directionsBack"
+    }
+    return render_template('tutor_template.html', **data)
+    
 @app.route('/Atubangan')
 @login_required
 def atubangan():
-    audio_file = "Atubangan.wav"
-    return render_template('directions/Atubangan.html', audio_file=audio_file)
-
+    data = {
+        "audio_file": "Atubangan.wav",
+        "cebuano_text": "Atubangan",
+        "english_text": "In front",
+        "back_url": "/directionsBack"
+    }
+    return render_template('tutor_template.html', **data)
+    
 @app.route('/Likod')
 @login_required
 def likod():
-    audio_file = "Likod.wav"
-    return render_template('directions/Likod.html', audio_file=audio_file)
-
+    data = {
+        "audio_file": "Likod.wav",
+        "cebuano_text": "Likod",
+        "english_text": "Behind",
+        "back_url": "/directionsBack"
+    }
+    return render_template('tutor_template.html', **data)
+    
 #People routes
 @app.route('/Ikaw')
 @login_required
 def ikaw():
-    audio_file = "Ikaw.wav"
-    return render_template('people/Ikaw.html', audio_file=audio_file)
-
+    data = {
+        "audio_file": "Ikaw.wav",
+        "cebuano_text": "Ikaw",
+        "english_text": "You",
+        "back_url": "/peopleBack"
+    }
+    return render_template('tutor_template.html', **data)
+    
 @app.route('/Ako')
 @login_required
 def ako():
-    audio_file = "Ako.wav"
-    return render_template('people/Ako.html', audio_file=audio_file)
+    data = {
+        "audio_file": "Ako.wav",
+        "cebuano_text": "Ako",
+        "english_text": "Me/I",
+        "back_url": "/peopleBack"
+    }
+    return render_template('tutor_template.html', **data)
 
 @app.route('/Siya')
 @login_required
 def siya():
-    audio_file = "Siya.wav"
-    return render_template('people/Siya.html', audio_file=audio_file)
+    data = {
+        "audio_file": "Siya.wav",
+        "cebuano_text": "Siya",
+        "english_text": "He/She",
+        "back_url": "/peopleBack"
+    }
+    return render_template('tutor_template.html', **data)
 
 @app.route('/Sila')
 @login_required
 def sila():
-    audio_file = "Sila.wav"
-    return render_template('people/Sila.html', audio_file=audio_file)
-
+    data = {
+        "audio_file": "Sila.wav",
+        "cebuano_text": "Sila",
+        "english_text": "They/Them",
+        "back_url": "/peopleBack"
+    }
+    return render_template('tutor_template.html', **data)
+    
 @app.route('/Imoha')
 @login_required
 def imoha():
-    audio_file = "Imoha.wav"
-    return render_template('people/Imoha.html', audio_file=audio_file)
+    data = {
+        "audio_file": "Imoha.wav",
+        "cebuano_text": "Imoha",
+        "english_text": "Yours",
+        "back_url": "/peopleBack"
+    }
+    return render_template('tutor_template.html', **data)
 
 @app.route('/Imohang')
 @login_required
 def imohang():
-    audio_file = "Imohang.wav"
-    return render_template('people/Imohang.html', audio_file=audio_file)
+    data = {
+        "audio_file": "Imohang.wav",
+        "cebuano_text": "Imohang",
+        "english_text": "Your",
+        "back_url": "/peopleBack"
+    }
+    return render_template('tutor_template.html', **data)
 
 @app.route('/Akoa')
 @login_required
 def akoa():
-    audio_file = "Akoa.wav"
-    return render_template('people/Akoa.html', audio_file=audio_file)
+    data = {
+        "audio_file": "Akoa.wav",
+        "cebuano_text": "Akoa",
+        "english_text": "Mine",
+        "back_url": "/peopleBack"
+    }
+    return render_template('tutor_template.html', **data)
 
 @app.route('/Akoang')
 @login_required
 def akoang():
-    audio_file = "Akoang.wav"
-    return render_template('people/Akoang.html', audio_file=audio_file)
-
+    data = {
+        "audio_file": "Akoang.wav",
+        "cebuano_text": "Akoang",
+        "english_text": "My",
+        "back_url": "/peopleBack"
+    }
+    return render_template('tutor_template.html', **data)
+    
 @app.route('/Anak')
 @login_required
 def anak():
-    audio_file = "Anak.wav"
-    return render_template('people/Anak.html', audio_file=audio_file)
+    data = {
+        "audio_file": "Anak.wav",
+        "cebuano_text": "Anak",
+        "english_text": "Son/Daughter",
+        "back_url": "/peopleBack"
+    }
+    return render_template('tutor_template.html', **data)
 
 @app.route('/Bata')
 @login_required
 def bata():
-    audio_file = "Bata.wav"
-    return render_template('people/Bata.html', audio_file=audio_file)
+    data = {
+        "audio_file": "Bata.wav",
+        "cebuano_text": "Bata",
+        "english_text": "Child",
+        "back_url": "/peopleBack"
+    }
+    return render_template('tutor_template.html', **data)
 
 @app.route('/Inahan')
 @login_required
 def inahan():
-    audio_file = "Inahan.wav"
-    return render_template('people/Inahan.html', audio_file=audio_file)
+    data = {
+        "audio_file": "Inahan.wav",
+        "cebuano_text": "Inahan",
+        "english_text": "Mother",
+        "back_url": "/peopleBack"
+    }
+    return render_template('tutor_template.html', **data)
 
 @app.route('/Amahan')
 @login_required
 def amahan():
-    audio_file = "Amahan.wav"
-    return render_template('people/Amahan.html', audio_file=audio_file)
-
+    data = {
+        "audio_file": "Amahan.wav",
+        "cebuano_text": "Amahan",
+        "english_text": "Father",
+        "back_url": "/peopleBack"
+    }
+    return render_template('tutor_template.html', **data)
+    
 @app.route('/Bana')
 @login_required
 def bana():
-    audio_file = "Bana.wav"
-    return render_template('people/Bana.html', audio_file=audio_file)
-
+    data = {
+        "audio_file": "Bana.wav",
+        "cebuano_text": "Bana",
+        "english_text": "Husband",
+        "back_url": "/peopleBack"
+    }
+    return render_template('tutor_template.html', **data)
+    
 @app.route('/Asawa')
 @login_required
 def asawa():
-    audio_file = "Asawa.wav"
-    return render_template('people/Asawa.html', audio_file=audio_file)
+    data = {
+        "audio_file": "Asawa.wav",
+        "cebuano_text": "Asawa",
+        "english_text": "Wife",
+        "back_url": "/peopleBack"
+    }
+    return render_template('tutor_template.html', **data)
 
 #Numbers routes
 @app.route('/Wala_None')
 @login_required
 def wala_none():
-    audio_file = "Wala_None.wav"
-    return render_template('numbers/Wala_None.html', audio_file=audio_file)
-
+    data = {
+        "audio_file": "Wala_None.wav",
+        "cebuano_text": "Wala",
+        "english_text": "None",
+        "back_url": "/numbersBack"
+    }
+    return render_template('tutor_template.html', **data)
+    
 @app.route('/Isa')
 @login_required
 def isa():
-    audio_file = "Isa.wav"
-    return render_template('numbers/Isa.html', audio_file=audio_file)
+    data = {
+        "audio_file": "Isa.wav",
+        "cebuano_text": "Isa",
+        "english_text": "One",
+        "back_url": "/numbersBack"
+    }
+    return render_template('tutor_template.html', **data)
 
 @app.route('/Duha')
 @login_required
 def duha():
-    audio_file = "Duha.wav"
-    return render_template('numbers/Duha.html', audio_file=audio_file)
+    data = {
+        "audio_file": "Duha.wav",
+        "cebuano_text": "Duha",
+        "english_text": "Two",
+        "back_url": "/numbersBack"
+    }
+    return render_template('tutor_template.html', **data)
 
 @app.route('/Tulo')
 @login_required
 def tulo():
-    audio_file = "Tulo.wav"
-    return render_template('numbers/Tulo.html', audio_file=audio_file)
+    data = {
+        "audio_file": "Tulo.wav",
+        "cebuano_text": "Tulo",
+        "english_text": "Three",
+        "back_url": "/numbersBack"
+    }
+    return render_template('tutor_template.html', **data)
 
 @app.route('/Upat')
 @login_required
 def upat():
-    audio_file = "Upat.wav"
-    return render_template('numbers/Upat.html', audio_file=audio_file)
+    data = {
+        "audio_file": "Upat.wav",
+        "cebuano_text": "Upat",
+        "english_text": "Four",
+        "back_url": "/numbersBack"
+    }
+    return render_template('tutor_template.html', **data)
 
 @app.route('/Lima')
 @login_required
 def lima():
-    audio_file = "Lima.wav"
-    return render_template('numbers/Lima.html', audio_file=audio_file)
+    data = {
+        "audio_file": "Lima.wav",
+        "cebuano_text": "Lima",
+        "english_text": "Five",
+        "back_url": "/numbersBack"
+    }
+    return render_template('tutor_template.html', **data)
 
 @app.route('/Unom')
 @login_required
 def unom():
-    audio_file = "Unom.wav"
-    return render_template('numbers/Unom.html', audio_file=audio_file)
+    data = {
+        "audio_file": "Unom.wav",
+        "cebuano_text": "Unom",
+        "english_text": "Six",
+        "back_url": "/numbersBack"
+    }
+    return render_template('tutor_template.html', **data)
 
 @app.route('/Pito')
 @login_required
 def pito():
-    audio_file = "Pito.wav"
-    return render_template('numbers/Pito.html', audio_file=audio_file)
+    data = {
+        "audio_file": "Pito.wav",
+        "cebuano_text": "Pito",
+        "english_text": "Seven",
+        "back_url": "/numbersBack"
+    }
+    return render_template('tutor_template.html', **data)
 
 @app.route('/Walo')
 @login_required
 def walo():
-    audio_file = "Walo.wav"
-    return render_template('numbers/Walo.html', audio_file=audio_file)
-
+    data = {
+        "audio_file": "Walo.wav",
+        "cebuano_text": "Walo",
+        "english_text": "Eight",
+        "back_url": "/numbersBack"
+    }
+    return render_template('tutor_template.html', **data)
+    
 @app.route('/Siyam')
 @login_required
 def siyam():
-    audio_file = "Siyam.wav"
-    return render_template('numbers/Siyam.html', audio_file=audio_file)
-
+    data = {
+        "audio_file": "Siyam.wav",
+        "cebuano_text": "Siyam",
+        "english_text": "Nine",
+        "back_url": "/numbersBack"
+    }
+    return render_template('tutor_template.html', **data)
+    
 @app.route('/Napulo')
 @login_required
 def napulo():
-    audio_file = "Napulo.wav"
-    return render_template('numbers/Napulo.html', audio_file=audio_file)
+    data = {
+        "audio_file": "Napulo.wav",
+        "cebuano_text": "Napulo",
+        "english_text": "Ten",
+        "back_url": "/numbersBack"
+    }
+    return render_template('tutor_template.html', **data)
 
 @app.route('/Tanan')
 @login_required
 def tanan():
-    audio_file = "Tanan.wav"
-    return render_template('numbers/Tanan.html', audio_file=audio_file)
+    data = {
+        "audio_file": "Tanan.wav",
+        "cebuano_text": "Tanan",
+        "english_text": "All",
+        "back_url": "/numbersBack"
+    }
+    return render_template('tutor_template.html', **data)
 
 #Basic routes
 @app.route('/Kabalo_Ka_Mag_Tagalog')
 @login_required
 def kabalo_ka_mag_tagalog():
-    audio_file = "Kabalo_Ka_Mag_Tagalog.wav"
-    return render_template('basic/Kabalo_Ka_Mag_Tagalog.html', audio_file=audio_file)
+    data = {
+        "audio_file": "Kabalo_Ka_Mag_Tagalog.wav",
+        "cebuano_text": "Kabalo Ka Mag Tagalog?",
+        "english_text": "Can you speak Tagalog?",
+        "back_url": "/basicBack"
+    }
+    return render_template('tutor_template.html', **data)
 
 @app.route('/Kabalo_Ka_Mag_English')
 @login_required
 def kabalo_ka_mag_english():
-    audio_file = "Kabalo_Ka_Mag_English.wav"
-    return render_template('basic/Kabalo_Ka_Mag_English.html', audio_file=audio_file)
-
+    data = {
+        "audio_file": "Kabalo_Ka_Mag_English.wav",
+        "cebuano_text": "Kabalo Ka Mag English?",
+        "english_text": "Can you speak English?",
+        "back_url": "/basicBack"
+    }
+    return render_template('tutor_template.html', **data)
+    
 @app.route('/Palihog')
 @login_required
 def palihog():
-    audio_file = "Palihog.wav"
-    return render_template('basic/Palihog.html', audio_file=audio_file)
+    data = {
+        "audio_file": "Pahilog.wav",
+        "cebuano_text": "Pahilog",
+        "english_text": "Please/Request",
+        "back_url": "/basicBack"
+    }
+    return render_template('tutor_template.html', **data)
 
 @app.route('/Mangayo_Ko_Ug_Menu')
 @login_required
 def mangayo_ko_ug_menu():
-    audio_file = "Mangayo_Ko_Ug_Menu.wav"
-    return render_template('basic/Mangayo_Ko_Ug_Menu.html', audio_file=audio_file)
-
+    data = {
+        "audio_file": "Mangayo_Ko_Ug_Menu.wav",
+        "cebuano_text": "Mangayo Ko Ug Menu",
+        "english_text": "I'd like the menu",
+        "back_url": "/basicBack"
+    }
+    return render_template('tutor_template.html', **data)
+    
 @app.route('/Palihog_Ko_Ug_Menu')
 @login_required
 def palihog_ko_ug_menu():
-    audio_file = "Palihog_Ko_Ug_Menu.wav"
-    return render_template('basic/Palihog_Ko_Ug_Menu.html', audio_file=audio_file)
+    data = {
+        "audio_file": "Palihog_Ko_Ug_Menu.wav",
+        "cebuano_text": "Pahilog Ko Ug Menu",
+        "english_text": "Please hand me the menu",
+        "back_url": "/basicBack"
+    }
+    return render_template('tutor_template.html', **data)
 
 @app.route('/Akoang_Anak')
 @login_required
 def akoang_anak():
-    audio_file = "Akoang_Anak.wav"
-    return render_template('basic/Akoang_Anak.html', audio_file=audio_file)
+    data = {
+        "audio_file": "Akoang_Anak.wav",
+        "cebuano_text": "Akoang Anak",
+        "english_text": "My child",
+        "back_url": "/basicBack"
+    }
+    return render_template('tutor_template.html', **data)
 
 @app.route('/Akoang_Amahan')
 @login_required
 def akoang_amahan():
-    audio_file = "Akoang_Amahan.wav"
-    return render_template('basic/Akoang_Amahan.html', audio_file=audio_file)
-
+    data = {
+        "audio_file": "Akoang_Amahan.wav",
+        "cebuano_text": "Akoang Amahan",
+        "english_text": "My father",
+        "back_url": "/basicBack"
+    }
+    return render_template('tutor_template.html', **data)
 @app.route('/Akoa_Nang_Anak')
 @login_required
 def akoa_nang_anak():
-    audio_file = "Akoa_Nang_Anak.wav"
-    return render_template('basic/Akoa_Nang_Anak.html', audio_file=audio_file)
+    data = {
+        "audio_file": "Akoa_Nang_Anak.wav",
+        "cebuano_text": "Akoa Nang Anak",
+        "english_text": "That is my child",
+        "back_url": "/basicBack"
+    }
+    return render_template('tutor_template.html', **data)
 
 @app.route('/Akoa_Nang_Inahan')
 @login_required
 def akoa_nang_inahan():
-    audio_file = "Akoa_Nang_Inahan.wav"
-    return render_template('basic/Akoa_Nang_Inahan.html', audio_file=audio_file)
+    data = {
+        "audio_file": "Akoa_Nang_Inahan.wav",
+        "cebuano_text": "Akoa Nang Inahan",
+        "english_text": "That is my mother",
+        "back_url": "/basicBack"
+    }
+    return render_template('tutor_template.html', **data)
+
 
 @app.route('/Iyaha_Ning_Bana')
 @login_required
 def iyaha_ning_bana():
-    audio_file = "Iyaha_Ning_Bana.wav"
-    return render_template('basic/Iyaha_Ning_Bana.html', audio_file=audio_file)
+    data = {
+        "audio_file": "Iyaha_Ning_Bana.wav",
+        "cebuano_text": "Iyaha Ning Bana",
+        "english_text": "This is his/her husband",
+        "back_url": "/basicBack"
+    }
+    return render_template('tutor_template.html', **data)
 
 @app.route('/Siya_Ang_Akoang_Asawa')
 @login_required
 def siya_ang_akoang_asawa():
-    audio_file = "Siya_Ang_Akoang_Asawa.wav"
-    return render_template('basic/Siya_Ang_Akoang_Asawa.html', audio_file=audio_file)
+    data = {
+        "audio_file": "Siya_Ang_Akoang_Asawa.wav",
+        "cebuano_text": "Siya Ang Akoang Asawa",
+        "english_text": "She is my wife",
+        "back_url": "/basicBack"
+    }
+    return render_template('tutor_template.html', **data)
 
 @app.route('/Sila_Akoang_Mga_Anak')
 @login_required
 def sila_akoang_mga_anak():
-    audio_file = "Sila_Akoang_Mga_Anak.wav"
-    return render_template('basic/Sila_Akoang_Mga_Anak.html', audio_file=audio_file)
-
-
+    data = {
+        "audio_file": "Sila_Akoang_Mga_Anak.wav",
+        "cebuano_text": "Sila Akoang Mga Anak",
+        "english_text": "They are my children",
+        "back_url": "/basicBack"
+    }
+    return render_template('tutor_template.html', **data)
 
 @app.route('/upload', methods=['POST'])
 @login_required
