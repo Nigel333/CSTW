@@ -889,7 +889,7 @@ def upload_audio():
     '''
 
     # RESULT FILE SHOULD BE {user}_result.txt or any way to specify responses to correct user, to be corrected
-    result_file = os.path.join('results/', f"{page_name}_result.txt") 
+    result_file = os.path.join(f'{USERDATA_FOLDER}/audio/{name}/{page_name}', f"{page_name}_result.txt") 
     try:
         with open(result_file, 'r') as f:
             color_code = f.read().strip()
