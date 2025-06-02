@@ -153,6 +153,7 @@ def login():
         return render_template('login.html', error_message=error_message)
     
     [username,flag] = checkLogin(request.form['username'],request.form['password'])
+    username.strip().replace(" ", "_")
     if flag != -1: # LOGIN
         session.permanent = True  # Permanent session (session exist after browser closing)
         session['username'] = username
@@ -199,6 +200,8 @@ def submit():
     lastName = request.form['lastName']
     password = request.form['password']
     confirmPass = request.form['confirmPassword']
+
+    username.strip().replace(" ", "_")
 
     # New user validation
     flag = newUserCheck(username,email,firstName,lastName,password,confirmPass)
