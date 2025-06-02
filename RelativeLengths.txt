@@ -1,0 +1,239 @@
+Adlaw (samples: 4.0, syllables: 2, divisor: 4.00):
+  ad: 0.2041
+  law: 0.7959
+
+Ako (samples: 5.0, syllables: 2, divisor: 5.00):
+  a: 0.2087
+  ko: 0.7913
+
+Akoa (samples: 13.0, syllables: 3, divisor: 13.00):
+  a: 0.2666
+  ko: 0.5153
+  a_2: 0.2181
+
+Akoang (samples: 21.0, syllables: 3, divisor: 21.00):
+  a: 0.2166
+  ko: 0.5236
+  ang: 0.2599
+
+Amahan (samples: 9.0, syllables: 3, divisor: 9.00):
+  a: 0.1869
+  ma: 0.2842
+  han: 0.5289
+
+Anak (samples: 17.0, syllables: 2, divisor: 17.00):
+  a: 0.2928
+  nak: 0.7072
+
+Ang (samples: 10.0, syllables: 1, divisor: 10.00):
+  ang: 1.0000
+
+Asa (samples: 5.0, syllables: 2, divisor: 5.00):
+  a: 0.2430
+  sa: 0.7570
+
+Asawa (samples: 10.0, syllables: 3, divisor: 10.00):
+  a: 0.1330
+  sa: 0.6199
+  wa: 0.2472
+
+Atubangan (samples: 5.0, syllables: 4, divisor: 5.00):
+  a: 0.1821
+  tu: 0.1374
+  ba: 0.2843
+  ngan: 0.3962
+
+Bana (samples: 9.0, syllables: 2, divisor: 9.00):
+  ba: 0.3963
+  na: 0.6037
+
+Bata (samples: 5.0, syllables: 2, divisor: 5.00):
+  ba: 0.7000
+  ta: 0.3000
+
+Buntag (samples: 5.0, syllables: 2, divisor: 5.00):
+  bun: 0.3297
+  tag: 0.6703
+
+Dani (samples: 5.0, syllables: 2, divisor: 5.00):
+  da: 0.3722
+  ni: 0.6278
+
+Didto (samples: 5.0, syllables: 2, divisor: 5.00):
+  did: 0.4783
+  to: 0.5217
+
+Duha (samples: 5.0, syllables: 2, divisor: 5.00):
+  du: 0.4733
+  ha: 0.5267
+
+English (samples: 4.0, syllables: 2, divisor: 4.00):
+  eng: 0.2555
+  lish: 0.7445
+
+Gabii (samples: 5.0, syllables: 3, divisor: 5.00):
+  ga: 0.5644
+  bi: 0.1832
+  i: 0.2525
+
+Hapon (samples: 5.0, syllables: 2, divisor: 5.00):
+  ha: 0.1404
+  pon: 0.8596
+
+Ikaw (samples: 5.0, syllables: 2, divisor: 5.00):
+  i: 0.2734
+  kaw: 0.7266
+
+Imoha (samples: 5.0, syllables: 3, divisor: 5.00):
+  i: 0.2423
+  mo: 0.2731
+  ha: 0.4846
+
+Imohang (samples: 4.0, syllables: 3, divisor: 4.00):
+  i: 0.1925
+  mo: 0.2762
+  hang: 0.5314
+
+Inahan (samples: 9.0, syllables: 3, divisor: 9.00):
+  i: 0.2082
+  na: 0.2224
+  han: 0.5693
+
+Isa (samples: 5.0, syllables: 2, divisor: 5.00):
+  i: 0.2764
+  sa: 0.7236
+
+Iyaha (samples: 4.0, syllables: 3, divisor: 4.00):
+  i: 0.4333
+  ya: 0.4167
+  ha: 0.1500
+
+Ka (samples: 13.0, syllables: 1, divisor: 13.00):
+  ka: 1.0000
+
+Kabalo (samples: 8.0, syllables: 3, divisor: 8.00):
+  ka: 0.4393
+  ba: 0.2705
+  lo: 0.2902
+
+Ko (samples: 8.0, syllables: 1, divisor: 8.00):
+  ko: 1.0000
+
+Kumusta (samples: 5.0, syllables: 3, divisor: 5.00):
+  ku: 0.3382
+  mus: 0.4461
+  ta: 0.2157
+
+Likod (samples: 5.0, syllables: 2, divisor: 5.00):
+  li: 0.3684
+  kod: 0.6316
+
+Lima (samples: 5.0, syllables: 2, divisor: 5.00):
+  li: 0.3305
+  ma: 0.6695
+
+Maayong (samples: 24.0, syllables: 3, divisor: 24.00):
+  ma: 0.2227
+  a: 0.1397
+  yong: 0.6376
+
+Mag (samples: 8.0, syllables: 1, divisor: 8.00):
+  mag: 1.0000
+
+Mangayo (samples: 4.0, syllables: 3, divisor: 4.00):
+  ma: 0.4252
+  nga: 0.1732
+  yo: 0.4016
+
+Menu (samples: 8.0, syllables: 2, divisor: 8.00):
+  me: 0.7157
+  nu: 0.2843
+
+Mga (samples: 4.0, syllables: 2, divisor: 4.00):
+  ma: 0.2759
+  nga: 0.7241
+
+Nang (samples: 8.0, syllables: 1, divisor: 8.00):
+  nang: 1.0000
+
+Napulo (samples: 5.0, syllables: 3, divisor: 5.00):
+  na: 0.2152
+  pu: 0.2881
+  lo: 0.4967
+
+Ning (samples: 4.0, syllables: 1, divisor: 4.00):
+  ning: 1.0000
+
+Palihog (samples: 8.0, syllables: 3, divisor: 8.00):
+  pa: 0.2897
+  li: 0.2423
+  hog: 0.4680
+
+Pito (samples: 5.0, syllables: 2, divisor: 5.00):
+  pi: 0.3125
+  to: 0.6875
+
+Sila (samples: 8.0, syllables: 2, divisor: 8.00):
+  si: 0.5163
+  la: 0.4837
+
+Siya (samples: 10.0, syllables: 2, divisor: 10.00):
+  si: 0.4589
+  ya: 0.5411
+
+Siyam (samples: 5.0, syllables: 2, divisor: 5.00):
+  si: 0.4354
+  yam: 0.5646
+
+Taas (samples: 5.0, syllables: 2, divisor: 5.00):
+  ta: 0.3323
+  as: 0.6677
+
+Tagalog (samples: 4.0, syllables: 3, divisor: 4.00):
+  ta: 0.1519
+  ga: 0.2089
+  log: 0.6392
+
+Tanan (samples: 5.0, syllables: 2, divisor: 5.00):
+  ta: 0.2423
+  nan: 0.7577
+
+Too (samples: 5.0, syllables: 2, divisor: 5.00):
+  to: 0.4593
+  o: 0.5407
+
+Tulo (samples: 5.0, syllables: 2, divisor: 5.00):
+  tu: 0.3333
+  lo: 0.6667
+
+Ubos (samples: 5.0, syllables: 2, divisor: 5.00):
+  u: 0.2511
+  bos: 0.7489
+
+Udto (samples: 5.0, syllables: 2, divisor: 5.00):
+  ud: 0.5099
+  to: 0.4901
+
+Ug (samples: 8.0, syllables: 1, divisor: 8.00):
+  ug: 1.0000
+
+Unom (samples: 5.0, syllables: 2, divisor: 5.00):
+  u: 0.2941
+  nom: 0.7059
+
+Upat (samples: 5.0, syllables: 2, divisor: 5.00):
+  u: 0.4472
+  pat: 0.5528
+
+WalaLeft (samples: 5.0, syllables: 2, divisor: 5.00):
+  wa: 0.2463
+  la: 0.7537
+
+WalaZero (samples: 5.0, syllables: 2, divisor: 5.00):
+  wa: 0.4937
+  la: 0.5063
+
+Walo (samples: 5.0, syllables: 2, divisor: 5.00):
+  wa: 0.2851
+  lo: 0.7149
+

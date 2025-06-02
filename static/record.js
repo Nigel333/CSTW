@@ -19,18 +19,18 @@ nextBtn.addEventListener('click', async (e) => {
         };
 
         mediaRecorder.onstop = () => {
-            const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
+            const audioBlob = new Blob(audioChunks, { type: 'audio/webm' });
             const audioUrl = URL.createObjectURL(audioBlob);
             const audio = new Audio(audioUrl);
             audio.play(); // Optional: play back the recording
 
             const formData = new FormData();
-            formData.append('audio', audioBlob, 'recording.wav');
+            formData.append('audio', audioBlob, 'recording.webm');
 
             const pageName = window.location.pathname.split("/").pop().replace('.html', '');
             formData.append('page_name', pageName);
 
-            fetch('https://how-collections-genealogy-gibson.trycloudflare.com/upload', {
+            fetch('https://recorder-yields-hoping-regulations.trycloudflare.com/upload', {
                 method: 'POST',
                 body: formData
             })
