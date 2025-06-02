@@ -5,6 +5,7 @@ import logging
 from logging.handlers import RotatingFileHandler
 import time
 import threading
+import subprocess
 import mysql.connector
 from functions import * #functions.py
 from datetime import datetime, timedelta
@@ -21,7 +22,7 @@ app = Flask(__name__)
 db = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="secdevS15",
+    password="Bananaman6606",
     database="cwts"
 )
 
@@ -124,6 +125,7 @@ def check_session_timeout():
 @app.route('/')
 def index():
     name = session.get('username')
+    print(name)
     if name:  # If logged in, redirect to modules
         return redirect('/modules')
     return render_template('home.html') 
@@ -270,7 +272,7 @@ def basicBack():
 @login_required
 def maayong_buntag():
     data = {
-        "audio_file": "Maayong_Buntag.wav",
+        "audio_file": "Maayong_Buntag.webm",
         "cebuano_text": "Maayong Buntag!",
         "english_text": "Good Morning!",
         "back_url": "/greetingsBack"
@@ -281,7 +283,7 @@ def maayong_buntag():
 @login_required
 def maayong_udto():
     data = {
-        "audio_file": "Maayong_Udto.wav",
+        "audio_file": "Maayong_Udto.webm",
         "cebuano_text": "Maayong Udto!",
         "english_text": "Good Noon!",
         "back_url": "/greetingsBack"
@@ -292,7 +294,7 @@ def maayong_udto():
 @login_required
 def maayong_hapon():
     data = {
-        "audio_file": "Maayong_Hapon.wav",
+        "audio_file": "Maayong_Hapon.webm",
         "cebuano_text": "Maayong Hapon!",
         "english_text": "Good Afternoon!",
         "back_url": "/greetingsBack"
@@ -303,7 +305,7 @@ def maayong_hapon():
 @login_required
 def maayong_gabii():
     data = {
-        "audio_file": "Maayong_Gabii.wav",
+        "audio_file": "Maayong_Gabii.webm",
         "cebuano_text": "Maayong Gabii!",
         "english_text": "Good Night!",
         "back_url": "/greetingsBack"
@@ -314,7 +316,7 @@ def maayong_gabii():
 @login_required
 def maayong_adlaw():
     data = {
-        "audio_file": "Maayong_Adlaw.wav",
+        "audio_file": "Maayong_Adlaw.webm",
         "cebuano_text": "Maayong Adlaw!",
         "english_text": "Good Day!",
         "back_url": "/greetingsBack"
@@ -324,9 +326,9 @@ def maayong_adlaw():
 @app.route('/Kumusta_Ka')
 @login_required
 def kumusta_ka():
-    audio_file = "Kumusta_Ka.wav"
+    audio_file = "Kumusta_Ka.webm"
     data = {
-        "audio_file": "Kumusta_Ka.wav",
+        "audio_file": "Kumusta_Ka.webm",
         "cebuano_text": "Kumusta ka?",
         "english_text": "How are you?",
         "back_url": "/greetingsBack"
@@ -338,7 +340,7 @@ def kumusta_ka():
 @login_required
 def didto():
     data = {
-        "audio_file": "Didto.wav",
+        "audio_file": "Didto.webm",
         "cebuano_text": "Didto",
         "english_text": "Over there (far)",
         "back_url": "/directionsBack"
@@ -349,7 +351,7 @@ def didto():
 @login_required
 def dani():
     data = {
-        "audio_file": "Dani.wav",
+        "audio_file": "Dani.webm",
         "cebuano_text": "Dani",
         "english_text": "Here",
         "back_url": "/directionsBack"
@@ -360,7 +362,7 @@ def dani():
 @login_required
 def wala():
     data = {
-        "audio_file": "Wala.wav",
+        "audio_file": "Wala.webm",
         "cebuano_text": "Wala",
         "english_text": "Left",
         "back_url": "/directionsBack"
@@ -371,7 +373,7 @@ def wala():
 @login_required
 def too():
     data = {
-        "audio_file": "Too.wav",
+        "audio_file": "Too.webm",
         "cebuano_text": "Too",
         "english_text": "Right",
         "back_url": "/directionsBack"
@@ -382,7 +384,7 @@ def too():
 @login_required
 def asa_ang():
     data = {
-        "audio_file": "Asa_Ang.wav",
+        "audio_file": "Asa_Ang.webm",
         "cebuano_text": "Asa Ang",
         "english_text": "Where is",
         "back_url": "/directionsBack"
@@ -393,7 +395,7 @@ def asa_ang():
 @login_required
 def taas():
     data = {
-        "audio_file": "Taas.wav",
+        "audio_file": "Taas.webm",
         "cebuano_text": "Taas",
         "english_text": "Up",
         "back_url": "/directionsBack"
@@ -404,7 +406,7 @@ def taas():
 @login_required
 def ubos():
     data = {
-        "audio_file": "Ubos.wav",
+        "audio_file": "Ubos.webm",
         "cebuano_text": "Ubos",
         "english_text": "Down",
         "back_url": "/directionsBack"
@@ -415,7 +417,7 @@ def ubos():
 @login_required
 def atubangan():
     data = {
-        "audio_file": "Atubangan.wav",
+        "audio_file": "Atubangan.webm",
         "cebuano_text": "Atubangan",
         "english_text": "In front",
         "back_url": "/directionsBack"
@@ -426,7 +428,7 @@ def atubangan():
 @login_required
 def likod():
     data = {
-        "audio_file": "Likod.wav",
+        "audio_file": "Likod.webm",
         "cebuano_text": "Likod",
         "english_text": "Behind",
         "back_url": "/directionsBack"
@@ -438,7 +440,7 @@ def likod():
 @login_required
 def ikaw():
     data = {
-        "audio_file": "Ikaw.wav",
+        "audio_file": "Ikaw.webm",
         "cebuano_text": "Ikaw",
         "english_text": "You",
         "back_url": "/peopleBack"
@@ -449,7 +451,7 @@ def ikaw():
 @login_required
 def ako():
     data = {
-        "audio_file": "Ako.wav",
+        "audio_file": "Ako.webm",
         "cebuano_text": "Ako",
         "english_text": "Me/I",
         "back_url": "/peopleBack"
@@ -460,7 +462,7 @@ def ako():
 @login_required
 def siya():
     data = {
-        "audio_file": "Siya.wav",
+        "audio_file": "Siya.webm",
         "cebuano_text": "Siya",
         "english_text": "He/She",
         "back_url": "/peopleBack"
@@ -471,7 +473,7 @@ def siya():
 @login_required
 def sila():
     data = {
-        "audio_file": "Sila.wav",
+        "audio_file": "Sila.webm",
         "cebuano_text": "Sila",
         "english_text": "They/Them",
         "back_url": "/peopleBack"
@@ -482,7 +484,7 @@ def sila():
 @login_required
 def imoha():
     data = {
-        "audio_file": "Imoha.wav",
+        "audio_file": "Imoha.webm",
         "cebuano_text": "Imoha",
         "english_text": "Yours",
         "back_url": "/peopleBack"
@@ -493,7 +495,7 @@ def imoha():
 @login_required
 def imohang():
     data = {
-        "audio_file": "Imohang.wav",
+        "audio_file": "Imohang.webm",
         "cebuano_text": "Imohang",
         "english_text": "Your",
         "back_url": "/peopleBack"
@@ -504,7 +506,7 @@ def imohang():
 @login_required
 def akoa():
     data = {
-        "audio_file": "Akoa.wav",
+        "audio_file": "Akoa.webm",
         "cebuano_text": "Akoa",
         "english_text": "Mine",
         "back_url": "/peopleBack"
@@ -515,7 +517,7 @@ def akoa():
 @login_required
 def akoang():
     data = {
-        "audio_file": "Akoang.wav",
+        "audio_file": "Akoang.webm",
         "cebuano_text": "Akoang",
         "english_text": "My",
         "back_url": "/peopleBack"
@@ -526,7 +528,7 @@ def akoang():
 @login_required
 def anak():
     data = {
-        "audio_file": "Anak.wav",
+        "audio_file": "Anak.webm",
         "cebuano_text": "Anak",
         "english_text": "Son/Daughter",
         "back_url": "/peopleBack"
@@ -537,7 +539,7 @@ def anak():
 @login_required
 def bata():
     data = {
-        "audio_file": "Bata.wav",
+        "audio_file": "Bata.webm",
         "cebuano_text": "Bata",
         "english_text": "Child",
         "back_url": "/peopleBack"
@@ -548,7 +550,7 @@ def bata():
 @login_required
 def inahan():
     data = {
-        "audio_file": "Inahan.wav",
+        "audio_file": "Inahan.webm",
         "cebuano_text": "Inahan",
         "english_text": "Mother",
         "back_url": "/peopleBack"
@@ -559,7 +561,7 @@ def inahan():
 @login_required
 def amahan():
     data = {
-        "audio_file": "Amahan.wav",
+        "audio_file": "Amahan.webm",
         "cebuano_text": "Amahan",
         "english_text": "Father",
         "back_url": "/peopleBack"
@@ -570,7 +572,7 @@ def amahan():
 @login_required
 def bana():
     data = {
-        "audio_file": "Bana.wav",
+        "audio_file": "Bana.webm",
         "cebuano_text": "Bana",
         "english_text": "Husband",
         "back_url": "/peopleBack"
@@ -581,7 +583,7 @@ def bana():
 @login_required
 def asawa():
     data = {
-        "audio_file": "Asawa.wav",
+        "audio_file": "Asawa.webm",
         "cebuano_text": "Asawa",
         "english_text": "Wife",
         "back_url": "/peopleBack"
@@ -593,7 +595,7 @@ def asawa():
 @login_required
 def wala_none():
     data = {
-        "audio_file": "Wala_None.wav",
+        "audio_file": "Wala_None.webm",
         "cebuano_text": "Wala",
         "english_text": "None",
         "back_url": "/numbersBack"
@@ -604,7 +606,7 @@ def wala_none():
 @login_required
 def isa():
     data = {
-        "audio_file": "Isa.wav",
+        "audio_file": "Isa.webm",
         "cebuano_text": "Isa",
         "english_text": "One",
         "back_url": "/numbersBack"
@@ -615,7 +617,7 @@ def isa():
 @login_required
 def duha():
     data = {
-        "audio_file": "Duha.wav",
+        "audio_file": "Duha.webm",
         "cebuano_text": "Duha",
         "english_text": "Two",
         "back_url": "/numbersBack"
@@ -626,7 +628,7 @@ def duha():
 @login_required
 def tulo():
     data = {
-        "audio_file": "Tulo.wav",
+        "audio_file": "Tulo.webm",
         "cebuano_text": "Tulo",
         "english_text": "Three",
         "back_url": "/numbersBack"
@@ -637,7 +639,7 @@ def tulo():
 @login_required
 def upat():
     data = {
-        "audio_file": "Upat.wav",
+        "audio_file": "Upat.webm",
         "cebuano_text": "Upat",
         "english_text": "Four",
         "back_url": "/numbersBack"
@@ -648,7 +650,7 @@ def upat():
 @login_required
 def lima():
     data = {
-        "audio_file": "Lima.wav",
+        "audio_file": "Lima.webm",
         "cebuano_text": "Lima",
         "english_text": "Five",
         "back_url": "/numbersBack"
@@ -659,7 +661,7 @@ def lima():
 @login_required
 def unom():
     data = {
-        "audio_file": "Unom.wav",
+        "audio_file": "Unom.webm",
         "cebuano_text": "Unom",
         "english_text": "Six",
         "back_url": "/numbersBack"
@@ -670,7 +672,7 @@ def unom():
 @login_required
 def pito():
     data = {
-        "audio_file": "Pito.wav",
+        "audio_file": "Pito.webm",
         "cebuano_text": "Pito",
         "english_text": "Seven",
         "back_url": "/numbersBack"
@@ -681,7 +683,7 @@ def pito():
 @login_required
 def walo():
     data = {
-        "audio_file": "Walo.wav",
+        "audio_file": "Walo.webm",
         "cebuano_text": "Walo",
         "english_text": "Eight",
         "back_url": "/numbersBack"
@@ -692,7 +694,7 @@ def walo():
 @login_required
 def siyam():
     data = {
-        "audio_file": "Siyam.wav",
+        "audio_file": "Siyam.webm",
         "cebuano_text": "Siyam",
         "english_text": "Nine",
         "back_url": "/numbersBack"
@@ -703,7 +705,7 @@ def siyam():
 @login_required
 def napulo():
     data = {
-        "audio_file": "Napulo.wav",
+        "audio_file": "Napulo.webm",
         "cebuano_text": "Napulo",
         "english_text": "Ten",
         "back_url": "/numbersBack"
@@ -714,7 +716,7 @@ def napulo():
 @login_required
 def tanan():
     data = {
-        "audio_file": "Tanan.wav",
+        "audio_file": "Tanan.webm",
         "cebuano_text": "Tanan",
         "english_text": "All",
         "back_url": "/numbersBack"
@@ -726,7 +728,7 @@ def tanan():
 @login_required
 def kabalo_ka_mag_tagalog():
     data = {
-        "audio_file": "Kabalo_Ka_Mag_Tagalog.wav",
+        "audio_file": "Kabalo_Ka_Mag_Tagalog.webm",
         "cebuano_text": "Kabalo Ka Mag Tagalog?",
         "english_text": "Can you speak Tagalog?",
         "back_url": "/basicBack"
@@ -737,7 +739,7 @@ def kabalo_ka_mag_tagalog():
 @login_required
 def kabalo_ka_mag_english():
     data = {
-        "audio_file": "Kabalo_Ka_Mag_English.wav",
+        "audio_file": "Kabalo_Ka_Mag_English.webm",
         "cebuano_text": "Kabalo Ka Mag English?",
         "english_text": "Can you speak English?",
         "back_url": "/basicBack"
@@ -748,7 +750,7 @@ def kabalo_ka_mag_english():
 @login_required
 def palihog():
     data = {
-        "audio_file": "Pahilog.wav",
+        "audio_file": "Pahilog.webm",
         "cebuano_text": "Pahilog",
         "english_text": "Please/Request",
         "back_url": "/basicBack"
@@ -759,7 +761,7 @@ def palihog():
 @login_required
 def mangayo_ko_ug_menu():
     data = {
-        "audio_file": "Mangayo_Ko_Ug_Menu.wav",
+        "audio_file": "Mangayo_Ko_Ug_Menu.webm",
         "cebuano_text": "Mangayo Ko Ug Menu",
         "english_text": "I'd like the menu",
         "back_url": "/basicBack"
@@ -770,7 +772,7 @@ def mangayo_ko_ug_menu():
 @login_required
 def palihog_ko_ug_menu():
     data = {
-        "audio_file": "Palihog_Ko_Ug_Menu.wav",
+        "audio_file": "Palihog_Ko_Ug_Menu.webm",
         "cebuano_text": "Pahilog Ko Ug Menu",
         "english_text": "Please hand me the menu",
         "back_url": "/basicBack"
@@ -781,7 +783,7 @@ def palihog_ko_ug_menu():
 @login_required
 def akoang_anak():
     data = {
-        "audio_file": "Akoang_Anak.wav",
+        "audio_file": "Akoang_Anak.webm",
         "cebuano_text": "Akoang Anak",
         "english_text": "My child",
         "back_url": "/basicBack"
@@ -792,7 +794,7 @@ def akoang_anak():
 @login_required
 def akoang_amahan():
     data = {
-        "audio_file": "Akoang_Amahan.wav",
+        "audio_file": "Akoang_Amahan.webm",
         "cebuano_text": "Akoang Amahan",
         "english_text": "My father",
         "back_url": "/basicBack"
@@ -802,7 +804,7 @@ def akoang_amahan():
 @login_required
 def akoa_nang_anak():
     data = {
-        "audio_file": "Akoa_Nang_Anak.wav",
+        "audio_file": "Akoa_Nang_Anak.webm",
         "cebuano_text": "Akoa Nang Anak",
         "english_text": "That is my child",
         "back_url": "/basicBack"
@@ -813,7 +815,7 @@ def akoa_nang_anak():
 @login_required
 def akoa_nang_inahan():
     data = {
-        "audio_file": "Akoa_Nang_Inahan.wav",
+        "audio_file": "Akoa_Nang_Inahan.webm",
         "cebuano_text": "Akoa Nang Inahan",
         "english_text": "That is my mother",
         "back_url": "/basicBack"
@@ -825,7 +827,7 @@ def akoa_nang_inahan():
 @login_required
 def iyaha_ning_bana():
     data = {
-        "audio_file": "Iyaha_Ning_Bana.wav",
+        "audio_file": "Iyaha_Ning_Bana.webm",
         "cebuano_text": "Iyaha Ning Bana",
         "english_text": "This is his/her husband",
         "back_url": "/basicBack"
@@ -836,7 +838,7 @@ def iyaha_ning_bana():
 @login_required
 def siya_ang_akoang_asawa():
     data = {
-        "audio_file": "Siya_Ang_Akoang_Asawa.wav",
+        "audio_file": "Siya_Ang_Akoang_Asawa.webm",
         "cebuano_text": "Siya Ang Akoang Asawa",
         "english_text": "She is my wife",
         "back_url": "/basicBack"
@@ -847,7 +849,7 @@ def siya_ang_akoang_asawa():
 @login_required
 def sila_akoang_mga_anak():
     data = {
-        "audio_file": "Sila_Akoang_Mga_Anak.wav",
+        "audio_file": "Sila_Akoang_Mga_Anak.webm",
         "cebuano_text": "Sila Akoang Mga Anak",
         "english_text": "They are my children",
         "back_url": "/basicBack"
@@ -873,23 +875,24 @@ def upload_audio():
     
     os.makedirs(user_folder, exist_ok=True)
 
-    filename = f"{page_name}99m.wav" # add gender here
+    filename = f"{page_name}99m.webm" # add gender here
     filepath = os.path.join(user_folder, filename)
     file.save(filepath)
     logger.info(f"Data by user [{name}] saved: {filepath}")
     
-    '''
+    
     # Insert model response maker script code here
     try:
-        subprocess.run(["./run.sh"], check=True, shell=True)
+        subprocess.run(f"./run.sh {name} {filepath}", check=True, shell=True)
         print("Shell script executed successfully")
     except subprocess.CalledProcessError as e:
         print(f"Error running script: {e}")
         return f"Error running script: {e}", 500
-    '''
+    
 
     # RESULT FILE SHOULD BE {user}_result.txt or any way to specify responses to correct user, to be corrected
-    result_file = os.path.join('results/', f"{page_name}_result.txt") 
+    result_file = os.path.join('results/', f"{name}_{page_name}.txt") 
+    print(result_file)
     try:
         with open(result_file, 'r') as f:
             color_code = f.read().strip()
