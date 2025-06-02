@@ -3,6 +3,7 @@ let audioChunks = [];
 
 const nextBtn = document.getElementById('nextBtn');
 const stopBtn = document.getElementById('stopBtn');
+const loadIcon = document.getElementById('loadIcon');
 
 nextBtn.addEventListener('click', async (e) => {
     e.preventDefault();
@@ -30,7 +31,10 @@ nextBtn.addEventListener('click', async (e) => {
             const pageName = window.location.pathname.split("/").pop().replace('.html', '');
             formData.append('page_name', pageName);
 
-            fetch('https://recorder-yields-hoping-regulations.trycloudflare.com/upload', {
+            loadIcon.style.display = 'inline-block';
+            nextBtn.style.display = 'none';
+
+            fetch('https://membership-strongly-sullivan-guidelines.trycloudflare.com/upload', {
                 method: 'POST',
                 body: formData
             })
@@ -55,6 +59,10 @@ nextBtn.addEventListener('click', async (e) => {
             })
             .catch(error => {
                 console.error('Upload error:', error);
+            })
+            .finally(() => {
+                loadIcon.style.display = 'none';
+                nextBtn.style.display = 'inline-block';
             });
         };
 
