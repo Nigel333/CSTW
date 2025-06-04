@@ -4,6 +4,38 @@ let audioChunks = [];
 const nextBtn = document.getElementById('nextBtn');
 const stopBtn = document.getElementById('stopBtn');
 const loadIcon = document.getElementById('loadIcon');
+const username = document.getElementById('username')?.textContent;
+let userData = null;
+
+// TO BE USED
+console.log('../user_data/${username}.json');
+fetch('../user_data/${username}.json')
+    .then(response => response.json())
+    .then(data => {
+        userData = data;
+        console.log('Loaded user data:', userData);
+        // Call your functions that need the data here
+    })
+    .catch(error => {
+        console.error('Error loading user data!:', error);
+    });
+
+// Function to apply color mapping
+function applyColorMapping(syllables, colorCode) {
+    const colors = {
+        "1": "#90ee90", // green
+        "2": "#ff4c4c", // red
+        "3": "#f5d142"  // yellow
+    };
+
+    const colored = syllables.map((syll, i) => {
+        const color = colors[colorCode[i]] || "white";
+        const syllSpaced = syll.replace(/ /g, '&nbsp;'); // preserve spaces
+        return `<span style="color:${color}">${syllSpaced}</span>`;
+    }).join('');
+
+    document.querySelector(".cebuano").innerHTML = colored;
+}
 
 nextBtn.addEventListener('click', async (e) => {
     e.preventDefault();
@@ -34,7 +66,7 @@ nextBtn.addEventListener('click', async (e) => {
             loadIcon.style.display = 'inline-block';
             nextBtn.style.display = 'none';
 
-            fetch('https://membership-strongly-sullivan-guidelines.trycloudflare.com/upload', {
+            fetch('https://spectacular-identification-cord-final.trycloudflare.com/upload', {
                 method: 'POST',
                 body: formData
             })
@@ -44,18 +76,7 @@ nextBtn.addEventListener('click', async (e) => {
 
                 const code = data.color_code; 
                 const syllables = data.syllables;
-                const colors = {
-                    "1": "#90ee90", // green
-                    "2": "#ff4c4c", // red
-                    "3": "#f5d142"  // yellow
-                };
-
-                const colored = syllables.map((syll, i) => {
-                    const color = colors[code[i]] || "white";
-                    return `<span style="color:${color}">${syll}</span>`;
-                }).join('');
-
-                document.querySelector(".cebuano").innerHTML = colored;
+                applyColorMapping(syllables, code);
             })
             .catch(error => {
                 console.error('Upload error:', error);
