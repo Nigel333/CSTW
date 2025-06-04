@@ -22,7 +22,7 @@ app = Flask(__name__)
 db = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="Bananaman6606",
+    password="Bananaman6606", #secdevS15
     database="cwts"
 )
 
@@ -858,6 +858,23 @@ def sila_akoang_mga_anak():
         "back_url": "/basicBack"
     }
     return render_template('tutor_template.html', **data)
+
+@app.route('/load', methods=['POST'])
+@login_required
+def load_data():
+    data = loadJson(session.get('username'))
+    print(f"{data}")
+    phrase = request.form.get('phrase', '')
+    print(f"{phrase}")
+    if phrase:
+            syllables = syllable_map.get(phrase, [])
+            colorCode = data.get('progress', {}).get(phrase, '')
+            print(f"{syllables} {colorCode}")
+            return jsonify({
+                "syllables": syllables,
+                "colorCode": colorCode
+            })
+    return
 
 @app.route('/upload', methods=['POST'])
 @login_required

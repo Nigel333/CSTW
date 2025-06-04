@@ -1,5 +1,5 @@
 {% if session.get('username') %}
 <p class="user-bar">
-    Welcome, <span id="username">{{ session.get('username') }}</span> <a class="button" href="/logout">Logout</a>
+    Welcome, {{ session.get('username') }} <a class="button" href="/logout">Logout</a>
 </p>
 {% endif %}

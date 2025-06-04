@@ -4,17 +4,19 @@ let audioChunks = [];
 const nextBtn = document.getElementById('nextBtn');
 const stopBtn = document.getElementById('stopBtn');
 const loadIcon = document.getElementById('loadIcon');
-const username = document.getElementById('username')?.textContent;
-let userData = null;
+const phrase = document.getElementById('phrase').textContent.replace(/ /g, '_').replace(/[?!]/g, '');
+const userData = new FormData();
+userData.append('phrase', phrase);
 
-// TO BE USED
-console.log('../user_data/${username}.json');
-fetch('../user_data/${username}.json')
+fetch('/load', {
+        method: 'POST',
+        body: userData
+    })
     .then(response => response.json())
     .then(data => {
-        userData = data;
-        console.log('Loaded user data:', userData);
-        // Call your functions that need the data here
+        if (data.colorCode && data.syllables) {
+            applyColorMapping(data.syllables, data.colorCode);
+        }
     })
     .catch(error => {
         console.error('Error loading user data!:', error);
@@ -66,7 +68,7 @@ nextBtn.addEventListener('click', async (e) => {
             loadIcon.style.display = 'inline-block';
             nextBtn.style.display = 'none';
 
-            fetch('https://spectacular-identification-cord-final.trycloudflare.com/upload', {
+            fetch('/upload', {
                 method: 'POST',
                 body: formData
             })
