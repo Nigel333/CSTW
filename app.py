@@ -825,7 +825,6 @@ def akoa_nang_inahan():
     }
     return render_template('tutor_template.html', **data)
 
-
 @app.route('/Iyaha_Ning_Bana')
 @login_required
 def iyaha_ning_bana():
@@ -863,18 +862,15 @@ def sila_akoang_mga_anak():
 @login_required
 def load_data():
     data = loadJson(session.get('username'))
-    print(f"{data}")
     phrase = request.form.get('phrase', '')
-    print(f"{phrase}")
     if phrase:
             syllables = syllable_map.get(phrase, [])
             colorCode = data.get('progress', {}).get(phrase, '')
-            print(f"{syllables} {colorCode}")
             return jsonify({
                 "syllables": syllables,
                 "colorCode": colorCode
             })
-    return
+    return 'No phrase', 404
 
 @app.route('/upload', methods=['POST'])
 @login_required
@@ -920,9 +916,7 @@ def upload_audio():
         return 'Result file not found', 500
     
     syllables = syllable_map.get(page_name, [])
-    #print(f"pagename: {syllables}")
-    #print(f"progress: {color_code}")
-    
+
     # Update user JSON
     updateProgress(name, page_name, color_code)
     logger.info(f"User [{name}] progress updated.")

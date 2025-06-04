@@ -14,7 +14,7 @@ fetch('/load', {
     })
     .then(response => response.json())
     .then(data => {
-        if (data.colorCode && data.syllables) {
+        if (data.colorCode) {
             applyColorMapping(data.syllables, data.colorCode);
         }
     })
