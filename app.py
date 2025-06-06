@@ -332,7 +332,7 @@ def kumusta_ka():
     audio_file = "Kumusta_Ka.webm"
     data = {
         "audio_file": "Kumusta_Ka.webm",
-        "cebuano_text": "Kumusta ka?",
+        "cebuano_text": "Kumusta Ka?",
         "english_text": "How are you?",
         "back_url": "/greetingsBack"
     }
