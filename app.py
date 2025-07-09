@@ -22,7 +22,7 @@ app = Flask(__name__)
 db = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="Bananaman6606", #secdevS15
+    password="password", #secdevS15
     database="cwts"
 )
 
@@ -134,7 +134,20 @@ def index():
 @login_required
 def modules():
     name = session.get('username')    
-    return render_template('modules.html', username=name) 
+    data = loadJson(session.get('username'))
+    progress_data = data.get('progress', {})
+
+    completed = []
+    not_completed = []
+
+    for phrase in syllable_map.keys():
+        progress_string = progress_data.get(phrase)
+
+        if progress_string and "2" not in progress_string:
+            completed.append(phrase)
+        else:
+            not_completed.append(phrase)
+    return render_template('modules.html', username=name, completed=completed, not_completed=not_completed) 
 
 @app.route('/login')
 def loginPage():
@@ -223,52 +236,182 @@ def submit():
 @app.route('/greetings')
 @login_required
 def greetings():
-    return render_template('greetings.html')
+    data = loadJson(session.get('username'))
+    progress_data = data.get('progress', {})
+
+    completed = []
+    not_completed = []
+
+    for phrase in syllable_map.keys():
+        progress_string = progress_data.get(phrase)
+
+        if progress_string and "2" not in progress_string:
+            completed.append(phrase)
+        else:
+            not_completed.append(phrase)
+    return render_template('greetings.html', completed=completed, not_completed=not_completed)
 
 @app.route('/greetingsBack')
 @login_required
 def greetingsBack():
-    return render_template('greetings.html')
+    data = loadJson(session.get('username'))
+    progress_data = data.get('progress', {})
+
+    completed = []
+    not_completed = []
+
+    for phrase in syllable_map.keys():
+        progress_string = progress_data.get(phrase)
+
+        if progress_string and "2" not in progress_string:
+            completed.append(phrase)
+        else:
+            not_completed.append(phrase)
+    return render_template('greetings.html', completed=completed, not_completed=not_completed)
 
 @app.route('/directions')
 @login_required
 def directions():
-    return render_template('directions.html')
+    data = loadJson(session.get('username'))
+    progress_data = data.get('progress', {})
+
+    completed = []
+    not_completed = []
+
+    for phrase in syllable_map.keys():
+        progress_string = progress_data.get(phrase)
+
+        if progress_string and "2" not in progress_string:
+            completed.append(phrase)
+        else:
+            not_completed.append(phrase)
+    return render_template('directions.html', completed=completed, not_completed=not_completed)
 
 @app.route('/directionsBack')
 @login_required
 def directionsBack():
-    return render_template('directions.html')
+    data = loadJson(session.get('username'))
+    progress_data = data.get('progress', {})
+
+    completed = []
+    not_completed = []
+
+    for phrase in syllable_map.keys():
+        progress_string = progress_data.get(phrase)
+
+        if progress_string and "2" not in progress_string:
+            completed.append(phrase)
+        else:
+            not_completed.append(phrase)
+    return render_template('directions.html', completed=completed, not_completed=not_completed)
 
 @app.route('/people')
 @login_required
 def people():
-    return render_template('people.html')
+    data = loadJson(session.get('username'))
+    progress_data = data.get('progress', {})
+
+    completed = []
+    not_completed = []
+
+    for phrase in syllable_map.keys():
+        progress_string = progress_data.get(phrase)
+
+        if progress_string and "2" not in progress_string:
+            completed.append(phrase)
+        else:
+            not_completed.append(phrase)
+    return render_template('people.html', completed=completed, not_completed=not_completed)
 
 @app.route('/peopleBack')
 @login_required
 def peopleBack():
-    return render_template('people.html')
+    data = loadJson(session.get('username'))
+    progress_data = data.get('progress', {})
+
+    completed = []
+    not_completed = []
+
+    for phrase in syllable_map.keys():
+        progress_string = progress_data.get(phrase)
+
+        if progress_string and "2" not in progress_string:
+            completed.append(phrase)
+        else:
+            not_completed.append(phrase)
+    return render_template('people.html', completed=completed, not_completed=not_completed)
 
 @app.route('/numbers')
 @login_required
 def numbers():
-    return render_template('numbers.html')
+    data = loadJson(session.get('username'))
+    progress_data = data.get('progress', {})
+
+    completed = []
+    not_completed = []
+
+    for phrase in syllable_map.keys():
+        progress_string = progress_data.get(phrase)
+
+        if progress_string and "2" not in progress_string:
+            completed.append(phrase)
+        else:
+            not_completed.append(phrase)
+    return render_template('numbers.html', completed=completed, not_completed=not_completed)
 
 @app.route('/numbersBack')
 @login_required
 def numbersBack():
-    return render_template('numbers.html')
+    data = loadJson(session.get('username'))
+    progress_data = data.get('progress', {})
+
+    completed = []
+    not_completed = []
+
+    for phrase in syllable_map.keys():
+        progress_string = progress_data.get(phrase)
+
+        if progress_string and "2" not in progress_string:
+            completed.append(phrase)
+        else:
+            not_completed.append(phrase)
+    return render_template('numbers.html', completed=completed, not_completed=not_completed)
 
 @app.route('/basic')
 @login_required
 def basic():
-    return render_template('basic.html')
+    data = loadJson(session.get('username'))
+    progress_data = data.get('progress', {})
+
+    completed = []
+    not_completed = []
+
+    for phrase in syllable_map.keys():
+        progress_string = progress_data.get(phrase)
+
+        if progress_string and "2" not in progress_string:
+            completed.append(phrase)
+        else:
+            not_completed.append(phrase)
+    return render_template('basic.html', completed=completed, not_completed=not_completed)
 
 @app.route('/basicBack')
 @login_required
 def basicBack():
-    return render_template('basic.html')
+    data = loadJson(session.get('username'))
+    progress_data = data.get('progress', {})
+
+    completed = []
+    not_completed = []
+
+    for phrase in syllable_map.keys():
+        progress_string = progress_data.get(phrase)
+
+        if progress_string and "2" not in progress_string:
+            completed.append(phrase)
+        else:
+            not_completed.append(phrase)
+    return render_template('basic.html', completed=completed, not_completed=not_completed)
 
 #Greetings routes
 @app.route('/Maayong_Buntag')
@@ -280,7 +423,20 @@ def maayong_buntag():
         "english_text": "Good Morning!",
         "back_url": "/greetingsBack"
     }
-    return render_template('tutor_template.html', **data)
+    user = loadJson(session.get('username'))
+    progress_data = user.get('progress', {})
+
+    completed = []
+    not_completed = []
+
+    for phrase in syllable_map.keys():
+        progress_string = progress_data.get(phrase)
+
+        if progress_string and "2" not in progress_string:
+            completed.append(phrase)
+        else:
+            not_completed.append(phrase)
+    return render_template('tutor_template.html', **data, completed=completed, not_completed=not_completed)
 
 @app.route('/Maayong_Udto')
 @login_required
@@ -291,7 +447,20 @@ def maayong_udto():
         "english_text": "Good Noon!",
         "back_url": "/greetingsBack"
     }
-    return render_template('tutor_template.html', **data)
+    user = loadJson(session.get('username'))
+    progress_data = user.get('progress', {})
+
+    completed = []
+    not_completed = []
+
+    for phrase in syllable_map.keys():
+        progress_string = progress_data.get(phrase)
+
+        if progress_string and "2" not in progress_string:
+            completed.append(phrase)
+        else:
+            not_completed.append(phrase)
+    return render_template('tutor_template.html', **data, completed=completed, not_completed=not_completed)
 
 @app.route('/Maayong_Hapon')
 @login_required
@@ -302,7 +471,20 @@ def maayong_hapon():
         "english_text": "Good Afternoon!",
         "back_url": "/greetingsBack"
     }
-    return render_template('tutor_template.html', **data)
+    user = loadJson(session.get('username'))
+    progress_data = user.get('progress', {})
+
+    completed = []
+    not_completed = []
+
+    for phrase in syllable_map.keys():
+        progress_string = progress_data.get(phrase)
+
+        if progress_string and "2" not in progress_string:
+            completed.append(phrase)
+        else:
+            not_completed.append(phrase)
+    return render_template('tutor_template.html', **data, completed=completed, not_completed=not_completed)
 
 @app.route('/Maayong_Gabii')
 @login_required
@@ -313,7 +495,20 @@ def maayong_gabii():
         "english_text": "Good Night!",
         "back_url": "/greetingsBack"
     }
-    return render_template('tutor_template.html', **data)
+    user = loadJson(session.get('username'))
+    progress_data = user.get('progress', {})
+
+    completed = []
+    not_completed = []
+
+    for phrase in syllable_map.keys():
+        progress_string = progress_data.get(phrase)
+
+        if progress_string and "2" not in progress_string:
+            completed.append(phrase)
+        else:
+            not_completed.append(phrase)
+    return render_template('tutor_template.html', **data, completed=completed, not_completed=not_completed)
 
 @app.route('/Maayong_Adlaw')
 @login_required
@@ -324,7 +519,20 @@ def maayong_adlaw():
         "english_text": "Good Day!",
         "back_url": "/greetingsBack"
     }
-    return render_template('tutor_template.html', **data)
+    user = loadJson(session.get('username'))
+    progress_data = user.get('progress', {})
+
+    completed = []
+    not_completed = []
+
+    for phrase in syllable_map.keys():
+        progress_string = progress_data.get(phrase)
+
+        if progress_string and "2" not in progress_string:
+            completed.append(phrase)
+        else:
+            not_completed.append(phrase)
+    return render_template('tutor_template.html', **data, completed=completed, not_completed=not_completed)
 
 @app.route('/Kumusta_Ka')
 @login_required
@@ -336,7 +544,20 @@ def kumusta_ka():
         "english_text": "How are you?",
         "back_url": "/greetingsBack"
     }
-    return render_template('tutor_template.html', **data)
+    user = loadJson(session.get('username'))
+    progress_data = user.get('progress', {})
+
+    completed = []
+    not_completed = []
+
+    for phrase in syllable_map.keys():
+        progress_string = progress_data.get(phrase)
+
+        if progress_string and "2" not in progress_string:
+            completed.append(phrase)
+        else:
+            not_completed.append(phrase)
+    return render_template('tutor_template.html', **data, completed=completed, not_completed=not_completed)
 
 #Directions routes
 @app.route('/Didto')
@@ -348,7 +569,20 @@ def didto():
         "english_text": "Over there (far)",
         "back_url": "/directionsBack"
     }
-    return render_template('tutor_template.html', **data)
+    user = loadJson(session.get('username'))
+    progress_data = user.get('progress', {})
+
+    completed = []
+    not_completed = []
+
+    for phrase in syllable_map.keys():
+        progress_string = progress_data.get(phrase)
+
+        if progress_string and "2" not in progress_string:
+            completed.append(phrase)
+        else:
+            not_completed.append(phrase)
+    return render_template('tutor_template.html', **data, completed=completed, not_completed=not_completed)
 
 @app.route('/Dani')
 @login_required
@@ -359,7 +593,20 @@ def dani():
         "english_text": "Here",
         "back_url": "/directionsBack"
     }
-    return render_template('tutor_template.html', **data)
+    user = loadJson(session.get('username'))
+    progress_data = user.get('progress', {})
+
+    completed = []
+    not_completed = []
+
+    for phrase in syllable_map.keys():
+        progress_string = progress_data.get(phrase)
+
+        if progress_string and "2" not in progress_string:
+            completed.append(phrase)
+        else:
+            not_completed.append(phrase)
+    return render_template('tutor_template.html', **data, completed=completed, not_completed=not_completed)
     
 @app.route('/Wala')
 @login_required
@@ -370,7 +617,20 @@ def wala():
         "english_text": "Left",
         "back_url": "/directionsBack"
     }
-    return render_template('tutor_template.html', **data)
+    user = loadJson(session.get('username'))
+    progress_data = user.get('progress', {})
+
+    completed = []
+    not_completed = []
+
+    for phrase in syllable_map.keys():
+        progress_string = progress_data.get(phrase)
+
+        if progress_string and "2" not in progress_string:
+            completed.append(phrase)
+        else:
+            not_completed.append(phrase)
+    return render_template('tutor_template.html', **data, completed=completed, not_completed=not_completed)
     
 @app.route('/Too')
 @login_required
@@ -381,7 +641,20 @@ def too():
         "english_text": "Right",
         "back_url": "/directionsBack"
     }
-    return render_template('tutor_template.html', **data)
+    user = loadJson(session.get('username'))
+    progress_data = user.get('progress', {})
+
+    completed = []
+    not_completed = []
+
+    for phrase in syllable_map.keys():
+        progress_string = progress_data.get(phrase)
+
+        if progress_string and "2" not in progress_string:
+            completed.append(phrase)
+        else:
+            not_completed.append(phrase)
+    return render_template('tutor_template.html', **data, completed=completed, not_completed=not_completed)
     
 @app.route('/Asa_Ang')
 @login_required
@@ -392,7 +665,20 @@ def asa_ang():
         "english_text": "Where is",
         "back_url": "/directionsBack"
     }
-    return render_template('tutor_template.html', **data)
+    user = loadJson(session.get('username'))
+    progress_data = user.get('progress', {})
+
+    completed = []
+    not_completed = []
+
+    for phrase in syllable_map.keys():
+        progress_string = progress_data.get(phrase)
+
+        if progress_string and "2" not in progress_string:
+            completed.append(phrase)
+        else:
+            not_completed.append(phrase)
+    return render_template('tutor_template.html', **data, completed=completed, not_completed=not_completed)
     
 @app.route('/Taas')
 @login_required
@@ -403,7 +689,20 @@ def taas():
         "english_text": "Up",
         "back_url": "/directionsBack"
     }
-    return render_template('tutor_template.html', **data)
+    user = loadJson(session.get('username'))
+    progress_data = user.get('progress', {})
+
+    completed = []
+    not_completed = []
+
+    for phrase in syllable_map.keys():
+        progress_string = progress_data.get(phrase)
+
+        if progress_string and "2" not in progress_string:
+            completed.append(phrase)
+        else:
+            not_completed.append(phrase)
+    return render_template('tutor_template.html', **data, completed=completed, not_completed=not_completed)
 
 @app.route('/Ubos')
 @login_required
@@ -414,7 +713,20 @@ def ubos():
         "english_text": "Down",
         "back_url": "/directionsBack"
     }
-    return render_template('tutor_template.html', **data)
+    user = loadJson(session.get('username'))
+    progress_data = user.get('progress', {})
+
+    completed = []
+    not_completed = []
+
+    for phrase in syllable_map.keys():
+        progress_string = progress_data.get(phrase)
+
+        if progress_string and "2" not in progress_string:
+            completed.append(phrase)
+        else:
+            not_completed.append(phrase)
+    return render_template('tutor_template.html', **data, completed=completed, not_completed=not_completed)
     
 @app.route('/Atubangan')
 @login_required
@@ -425,7 +737,20 @@ def atubangan():
         "english_text": "In front",
         "back_url": "/directionsBack"
     }
-    return render_template('tutor_template.html', **data)
+    user = loadJson(session.get('username'))
+    progress_data = user.get('progress', {})
+
+    completed = []
+    not_completed = []
+
+    for phrase in syllable_map.keys():
+        progress_string = progress_data.get(phrase)
+
+        if progress_string and "2" not in progress_string:
+            completed.append(phrase)
+        else:
+            not_completed.append(phrase)
+    return render_template('tutor_template.html', **data, completed=completed, not_completed=not_completed)
     
 @app.route('/Likod')
 @login_required
@@ -436,7 +761,20 @@ def likod():
         "english_text": "Behind",
         "back_url": "/directionsBack"
     }
-    return render_template('tutor_template.html', **data)
+    user = loadJson(session.get('username'))
+    progress_data = user.get('progress', {})
+
+    completed = []
+    not_completed = []
+
+    for phrase in syllable_map.keys():
+        progress_string = progress_data.get(phrase)
+
+        if progress_string and "2" not in progress_string:
+            completed.append(phrase)
+        else:
+            not_completed.append(phrase)
+    return render_template('tutor_template.html', **data, completed=completed, not_completed=not_completed)
     
 #People routes
 @app.route('/Ikaw')
@@ -448,7 +786,20 @@ def ikaw():
         "english_text": "You",
         "back_url": "/peopleBack"
     }
-    return render_template('tutor_template.html', **data)
+    user = loadJson(session.get('username'))
+    progress_data = user.get('progress', {})
+
+    completed = []
+    not_completed = []
+
+    for phrase in syllable_map.keys():
+        progress_string = progress_data.get(phrase)
+
+        if progress_string and "2" not in progress_string:
+            completed.append(phrase)
+        else:
+            not_completed.append(phrase)
+    return render_template('tutor_template.html', **data, completed=completed, not_completed=not_completed)
     
 @app.route('/Ako')
 @login_required
@@ -459,7 +810,20 @@ def ako():
         "english_text": "Me/I",
         "back_url": "/peopleBack"
     }
-    return render_template('tutor_template.html', **data)
+    user = loadJson(session.get('username'))
+    progress_data = user.get('progress', {})
+
+    completed = []
+    not_completed = []
+
+    for phrase in syllable_map.keys():
+        progress_string = progress_data.get(phrase)
+
+        if progress_string and "2" not in progress_string:
+            completed.append(phrase)
+        else:
+            not_completed.append(phrase)
+    return render_template('tutor_template.html', **data, completed=completed, not_completed=not_completed)
 
 @app.route('/Siya')
 @login_required
@@ -470,7 +834,20 @@ def siya():
         "english_text": "He/She",
         "back_url": "/peopleBack"
     }
-    return render_template('tutor_template.html', **data)
+    user = loadJson(session.get('username'))
+    progress_data = user.get('progress', {})
+
+    completed = []
+    not_completed = []
+
+    for phrase in syllable_map.keys():
+        progress_string = progress_data.get(phrase)
+
+        if progress_string and "2" not in progress_string:
+            completed.append(phrase)
+        else:
+            not_completed.append(phrase)
+    return render_template('tutor_template.html', **data, completed=completed, not_completed=not_completed)
 
 @app.route('/Sila')
 @login_required
@@ -481,7 +858,20 @@ def sila():
         "english_text": "They/Them",
         "back_url": "/peopleBack"
     }
-    return render_template('tutor_template.html', **data)
+    user = loadJson(session.get('username'))
+    progress_data = user.get('progress', {})
+
+    completed = []
+    not_completed = []
+
+    for phrase in syllable_map.keys():
+        progress_string = progress_data.get(phrase)
+
+        if progress_string and "2" not in progress_string:
+            completed.append(phrase)
+        else:
+            not_completed.append(phrase)
+    return render_template('tutor_template.html', **data, completed=completed, not_completed=not_completed)
     
 @app.route('/Imoha')
 @login_required
@@ -492,7 +882,20 @@ def imoha():
         "english_text": "Yours",
         "back_url": "/peopleBack"
     }
-    return render_template('tutor_template.html', **data)
+    user = loadJson(session.get('username'))
+    progress_data = user.get('progress', {})
+
+    completed = []
+    not_completed = []
+
+    for phrase in syllable_map.keys():
+        progress_string = progress_data.get(phrase)
+
+        if progress_string and "2" not in progress_string:
+            completed.append(phrase)
+        else:
+            not_completed.append(phrase)
+    return render_template('tutor_template.html', **data, completed=completed, not_completed=not_completed)
 
 @app.route('/Imohang')
 @login_required
@@ -503,7 +906,20 @@ def imohang():
         "english_text": "Your",
         "back_url": "/peopleBack"
     }
-    return render_template('tutor_template.html', **data)
+    user = loadJson(session.get('username'))
+    progress_data = user.get('progress', {})
+
+    completed = []
+    not_completed = []
+
+    for phrase in syllable_map.keys():
+        progress_string = progress_data.get(phrase)
+
+        if progress_string and "2" not in progress_string:
+            completed.append(phrase)
+        else:
+            not_completed.append(phrase)
+    return render_template('tutor_template.html', **data, completed=completed, not_completed=not_completed)
 
 @app.route('/Akoa')
 @login_required
@@ -514,7 +930,20 @@ def akoa():
         "english_text": "Mine",
         "back_url": "/peopleBack"
     }
-    return render_template('tutor_template.html', **data)
+    user = loadJson(session.get('username'))
+    progress_data = user.get('progress', {})
+
+    completed = []
+    not_completed = []
+
+    for phrase in syllable_map.keys():
+        progress_string = progress_data.get(phrase)
+
+        if progress_string and "2" not in progress_string:
+            completed.append(phrase)
+        else:
+            not_completed.append(phrase)
+    return render_template('tutor_template.html', **data, completed=completed, not_completed=not_completed)
 
 @app.route('/Akoang')
 @login_required
@@ -525,7 +954,20 @@ def akoang():
         "english_text": "My",
         "back_url": "/peopleBack"
     }
-    return render_template('tutor_template.html', **data)
+    user = loadJson(session.get('username'))
+    progress_data = user.get('progress', {})
+
+    completed = []
+    not_completed = []
+
+    for phrase in syllable_map.keys():
+        progress_string = progress_data.get(phrase)
+
+        if progress_string and "2" not in progress_string:
+            completed.append(phrase)
+        else:
+            not_completed.append(phrase)
+    return render_template('tutor_template.html', **data, completed=completed, not_completed=not_completed)
     
 @app.route('/Anak')
 @login_required
@@ -536,7 +978,20 @@ def anak():
         "english_text": "Son/Daughter",
         "back_url": "/peopleBack"
     }
-    return render_template('tutor_template.html', **data)
+    user = loadJson(session.get('username'))
+    progress_data = user.get('progress', {})
+
+    completed = []
+    not_completed = []
+
+    for phrase in syllable_map.keys():
+        progress_string = progress_data.get(phrase)
+
+        if progress_string and "2" not in progress_string:
+            completed.append(phrase)
+        else:
+            not_completed.append(phrase)
+    return render_template('tutor_template.html', **data, completed=completed, not_completed=not_completed)
 
 @app.route('/Bata')
 @login_required
@@ -547,7 +1002,20 @@ def bata():
         "english_text": "Child",
         "back_url": "/peopleBack"
     }
-    return render_template('tutor_template.html', **data)
+    user = loadJson(session.get('username'))
+    progress_data = user.get('progress', {})
+
+    completed = []
+    not_completed = []
+
+    for phrase in syllable_map.keys():
+        progress_string = progress_data.get(phrase)
+
+        if progress_string and "2" not in progress_string:
+            completed.append(phrase)
+        else:
+            not_completed.append(phrase)
+    return render_template('tutor_template.html', **data, completed=completed, not_completed=not_completed)
 
 @app.route('/Inahan')
 @login_required
@@ -558,7 +1026,20 @@ def inahan():
         "english_text": "Mother",
         "back_url": "/peopleBack"
     }
-    return render_template('tutor_template.html', **data)
+    user = loadJson(session.get('username'))
+    progress_data = user.get('progress', {})
+
+    completed = []
+    not_completed = []
+
+    for phrase in syllable_map.keys():
+        progress_string = progress_data.get(phrase)
+
+        if progress_string and "2" not in progress_string:
+            completed.append(phrase)
+        else:
+            not_completed.append(phrase)
+    return render_template('tutor_template.html', **data, completed=completed, not_completed=not_completed)
 
 @app.route('/Amahan')
 @login_required
@@ -569,7 +1050,20 @@ def amahan():
         "english_text": "Father",
         "back_url": "/peopleBack"
     }
-    return render_template('tutor_template.html', **data)
+    user = loadJson(session.get('username'))
+    progress_data = user.get('progress', {})
+
+    completed = []
+    not_completed = []
+
+    for phrase in syllable_map.keys():
+        progress_string = progress_data.get(phrase)
+
+        if progress_string and "2" not in progress_string:
+            completed.append(phrase)
+        else:
+            not_completed.append(phrase)
+    return render_template('tutor_template.html', **data, completed=completed, not_completed=not_completed)
     
 @app.route('/Bana')
 @login_required
@@ -580,7 +1074,20 @@ def bana():
         "english_text": "Husband",
         "back_url": "/peopleBack"
     }
-    return render_template('tutor_template.html', **data)
+    user = loadJson(session.get('username'))
+    progress_data = user.get('progress', {})
+
+    completed = []
+    not_completed = []
+
+    for phrase in syllable_map.keys():
+        progress_string = progress_data.get(phrase)
+
+        if progress_string and "2" not in progress_string:
+            completed.append(phrase)
+        else:
+            not_completed.append(phrase)
+    return render_template('tutor_template.html', **data, completed=completed, not_completed=not_completed)
     
 @app.route('/Asawa')
 @login_required
@@ -591,7 +1098,20 @@ def asawa():
         "english_text": "Wife",
         "back_url": "/peopleBack"
     }
-    return render_template('tutor_template.html', **data)
+    user = loadJson(session.get('username'))
+    progress_data = user.get('progress', {})
+
+    completed = []
+    not_completed = []
+
+    for phrase in syllable_map.keys():
+        progress_string = progress_data.get(phrase)
+
+        if progress_string and "2" not in progress_string:
+            completed.append(phrase)
+        else:
+            not_completed.append(phrase)
+    return render_template('tutor_template.html', **data, completed=completed, not_completed=not_completed)
 
 #Numbers routes
 @app.route('/Wala_None')
@@ -603,7 +1123,20 @@ def wala_none():
         "english_text": "None",
         "back_url": "/numbersBack"
     }
-    return render_template('tutor_template.html', **data)
+    user = loadJson(session.get('username'))
+    progress_data = user.get('progress', {})
+
+    completed = []
+    not_completed = []
+
+    for phrase in syllable_map.keys():
+        progress_string = progress_data.get(phrase)
+
+        if progress_string and "2" not in progress_string:
+            completed.append(phrase)
+        else:
+            not_completed.append(phrase)
+    return render_template('tutor_template.html', **data, completed=completed, not_completed=not_completed)
     
 @app.route('/Isa')
 @login_required
@@ -614,7 +1147,20 @@ def isa():
         "english_text": "One",
         "back_url": "/numbersBack"
     }
-    return render_template('tutor_template.html', **data)
+    user = loadJson(session.get('username'))
+    progress_data = user.get('progress', {})
+
+    completed = []
+    not_completed = []
+
+    for phrase in syllable_map.keys():
+        progress_string = progress_data.get(phrase)
+
+        if progress_string and "2" not in progress_string:
+            completed.append(phrase)
+        else:
+            not_completed.append(phrase)
+    return render_template('tutor_template.html', **data, completed=completed, not_completed=not_completed)
 
 @app.route('/Duha')
 @login_required
@@ -625,7 +1171,20 @@ def duha():
         "english_text": "Two",
         "back_url": "/numbersBack"
     }
-    return render_template('tutor_template.html', **data)
+    user = loadJson(session.get('username'))
+    progress_data = user.get('progress', {})
+
+    completed = []
+    not_completed = []
+
+    for phrase in syllable_map.keys():
+        progress_string = progress_data.get(phrase)
+
+        if progress_string and "2" not in progress_string:
+            completed.append(phrase)
+        else:
+            not_completed.append(phrase)
+    return render_template('tutor_template.html', **data, completed=completed, not_completed=not_completed)
 
 @app.route('/Tulo')
 @login_required
@@ -636,7 +1195,20 @@ def tulo():
         "english_text": "Three",
         "back_url": "/numbersBack"
     }
-    return render_template('tutor_template.html', **data)
+    user = loadJson(session.get('username'))
+    progress_data = user.get('progress', {})
+
+    completed = []
+    not_completed = []
+
+    for phrase in syllable_map.keys():
+        progress_string = progress_data.get(phrase)
+
+        if progress_string and "2" not in progress_string:
+            completed.append(phrase)
+        else:
+            not_completed.append(phrase)
+    return render_template('tutor_template.html', **data, completed=completed, not_completed=not_completed)
 
 @app.route('/Upat')
 @login_required
@@ -647,7 +1219,20 @@ def upat():
         "english_text": "Four",
         "back_url": "/numbersBack"
     }
-    return render_template('tutor_template.html', **data)
+    user = loadJson(session.get('username'))
+    progress_data = user.get('progress', {})
+
+    completed = []
+    not_completed = []
+
+    for phrase in syllable_map.keys():
+        progress_string = progress_data.get(phrase)
+
+        if progress_string and "2" not in progress_string:
+            completed.append(phrase)
+        else:
+            not_completed.append(phrase)
+    return render_template('tutor_template.html', **data, completed=completed, not_completed=not_completed)
 
 @app.route('/Lima')
 @login_required
@@ -658,7 +1243,20 @@ def lima():
         "english_text": "Five",
         "back_url": "/numbersBack"
     }
-    return render_template('tutor_template.html', **data)
+    user = loadJson(session.get('username'))
+    progress_data = user.get('progress', {})
+
+    completed = []
+    not_completed = []
+
+    for phrase in syllable_map.keys():
+        progress_string = progress_data.get(phrase)
+
+        if progress_string and "2" not in progress_string:
+            completed.append(phrase)
+        else:
+            not_completed.append(phrase)
+    return render_template('tutor_template.html', **data, completed=completed, not_completed=not_completed)
 
 @app.route('/Unom')
 @login_required
@@ -669,7 +1267,20 @@ def unom():
         "english_text": "Six",
         "back_url": "/numbersBack"
     }
-    return render_template('tutor_template.html', **data)
+    user = loadJson(session.get('username'))
+    progress_data = user.get('progress', {})
+
+    completed = []
+    not_completed = []
+
+    for phrase in syllable_map.keys():
+        progress_string = progress_data.get(phrase)
+
+        if progress_string and "2" not in progress_string:
+            completed.append(phrase)
+        else:
+            not_completed.append(phrase)
+    return render_template('tutor_template.html', **data, completed=completed, not_completed=not_completed)
 
 @app.route('/Pito')
 @login_required
@@ -680,7 +1291,20 @@ def pito():
         "english_text": "Seven",
         "back_url": "/numbersBack"
     }
-    return render_template('tutor_template.html', **data)
+    user = loadJson(session.get('username'))
+    progress_data = user.get('progress', {})
+
+    completed = []
+    not_completed = []
+
+    for phrase in syllable_map.keys():
+        progress_string = progress_data.get(phrase)
+
+        if progress_string and "2" not in progress_string:
+            completed.append(phrase)
+        else:
+            not_completed.append(phrase)
+    return render_template('tutor_template.html', **data, completed=completed, not_completed=not_completed)
 
 @app.route('/Walo')
 @login_required
@@ -691,7 +1315,20 @@ def walo():
         "english_text": "Eight",
         "back_url": "/numbersBack"
     }
-    return render_template('tutor_template.html', **data)
+    user = loadJson(session.get('username'))
+    progress_data = user.get('progress', {})
+
+    completed = []
+    not_completed = []
+
+    for phrase in syllable_map.keys():
+        progress_string = progress_data.get(phrase)
+
+        if progress_string and "2" not in progress_string:
+            completed.append(phrase)
+        else:
+            not_completed.append(phrase)
+    return render_template('tutor_template.html', **data, completed=completed, not_completed=not_completed)
     
 @app.route('/Siyam')
 @login_required
@@ -702,7 +1339,20 @@ def siyam():
         "english_text": "Nine",
         "back_url": "/numbersBack"
     }
-    return render_template('tutor_template.html', **data)
+    user = loadJson(session.get('username'))
+    progress_data = user.get('progress', {})
+
+    completed = []
+    not_completed = []
+
+    for phrase in syllable_map.keys():
+        progress_string = progress_data.get(phrase)
+
+        if progress_string and "2" not in progress_string:
+            completed.append(phrase)
+        else:
+            not_completed.append(phrase)
+    return render_template('tutor_template.html', **data, completed=completed, not_completed=not_completed)
     
 @app.route('/Napulo')
 @login_required
@@ -713,7 +1363,20 @@ def napulo():
         "english_text": "Ten",
         "back_url": "/numbersBack"
     }
-    return render_template('tutor_template.html', **data)
+    user = loadJson(session.get('username'))
+    progress_data = user.get('progress', {})
+
+    completed = []
+    not_completed = []
+
+    for phrase in syllable_map.keys():
+        progress_string = progress_data.get(phrase)
+
+        if progress_string and "2" not in progress_string:
+            completed.append(phrase)
+        else:
+            not_completed.append(phrase)
+    return render_template('tutor_template.html', **data, completed=completed, not_completed=not_completed)
 
 @app.route('/Tanan')
 @login_required
@@ -724,7 +1387,20 @@ def tanan():
         "english_text": "All",
         "back_url": "/numbersBack"
     }
-    return render_template('tutor_template.html', **data)
+    user = loadJson(session.get('username'))
+    progress_data = user.get('progress', {})
+
+    completed = []
+    not_completed = []
+
+    for phrase in syllable_map.keys():
+        progress_string = progress_data.get(phrase)
+
+        if progress_string and "2" not in progress_string:
+            completed.append(phrase)
+        else:
+            not_completed.append(phrase)
+    return render_template('tutor_template.html', **data, completed=completed, not_completed=not_completed)
 
 #Basic routes
 @app.route('/Kabalo_Ka_Mag_Tagalog')
@@ -736,7 +1412,20 @@ def kabalo_ka_mag_tagalog():
         "english_text": "Can you speak Tagalog?",
         "back_url": "/basicBack"
     }
-    return render_template('tutor_template.html', **data)
+    user = loadJson(session.get('username'))
+    progress_data = user.get('progress', {})
+
+    completed = []
+    not_completed = []
+
+    for phrase in syllable_map.keys():
+        progress_string = progress_data.get(phrase)
+
+        if progress_string and "2" not in progress_string:
+            completed.append(phrase)
+        else:
+            not_completed.append(phrase)
+    return render_template('tutor_template.html', **data, completed=completed, not_completed=not_completed)
 
 @app.route('/Kabalo_Ka_Mag_English')
 @login_required
@@ -747,7 +1436,20 @@ def kabalo_ka_mag_english():
         "english_text": "Can you speak English?",
         "back_url": "/basicBack"
     }
-    return render_template('tutor_template.html', **data)
+    user = loadJson(session.get('username'))
+    progress_data = user.get('progress', {})
+
+    completed = []
+    not_completed = []
+
+    for phrase in syllable_map.keys():
+        progress_string = progress_data.get(phrase)
+
+        if progress_string and "2" not in progress_string:
+            completed.append(phrase)
+        else:
+            not_completed.append(phrase)
+    return render_template('tutor_template.html', **data, completed=completed, not_completed=not_completed)
     
 @app.route('/Palihog')
 @login_required
@@ -758,7 +1460,20 @@ def palihog():
         "english_text": "Please/Request",
         "back_url": "/basicBack"
     }
-    return render_template('tutor_template.html', **data)
+    user = loadJson(session.get('username'))
+    progress_data = user.get('progress', {})
+
+    completed = []
+    not_completed = []
+
+    for phrase in syllable_map.keys():
+        progress_string = progress_data.get(phrase)
+
+        if progress_string and "2" not in progress_string:
+            completed.append(phrase)
+        else:
+            not_completed.append(phrase)
+    return render_template('tutor_template.html', **data, completed=completed, not_completed=not_completed)
 
 @app.route('/Mangayo_Ko_Ug_Menu')
 @login_required
@@ -769,7 +1484,20 @@ def mangayo_ko_ug_menu():
         "english_text": "I'd like the menu",
         "back_url": "/basicBack"
     }
-    return render_template('tutor_template.html', **data)
+    user = loadJson(session.get('username'))
+    progress_data = user.get('progress', {})
+
+    completed = []
+    not_completed = []
+
+    for phrase in syllable_map.keys():
+        progress_string = progress_data.get(phrase)
+
+        if progress_string and "2" not in progress_string:
+            completed.append(phrase)
+        else:
+            not_completed.append(phrase)
+    return render_template('tutor_template.html', **data, completed=completed, not_completed=not_completed)
     
 @app.route('/Palihog_Ko_Ug_Menu')
 @login_required
@@ -780,7 +1508,20 @@ def palihog_ko_ug_menu():
         "english_text": "Please hand me the menu",
         "back_url": "/basicBack"
     }
-    return render_template('tutor_template.html', **data)
+    user = loadJson(session.get('username'))
+    progress_data = user.get('progress', {})
+
+    completed = []
+    not_completed = []
+
+    for phrase in syllable_map.keys():
+        progress_string = progress_data.get(phrase)
+
+        if progress_string and "2" not in progress_string:
+            completed.append(phrase)
+        else:
+            not_completed.append(phrase)
+    return render_template('tutor_template.html', **data, completed=completed, not_completed=not_completed)
 
 @app.route('/Akoang_Anak')
 @login_required
@@ -791,7 +1532,20 @@ def akoang_anak():
         "english_text": "My child",
         "back_url": "/basicBack"
     }
-    return render_template('tutor_template.html', **data)
+    user = loadJson(session.get('username'))
+    progress_data = user.get('progress', {})
+
+    completed = []
+    not_completed = []
+
+    for phrase in syllable_map.keys():
+        progress_string = progress_data.get(phrase)
+
+        if progress_string and "2" not in progress_string:
+            completed.append(phrase)
+        else:
+            not_completed.append(phrase)
+    return render_template('tutor_template.html', **data, completed=completed, not_completed=not_completed)
 
 @app.route('/Akoang_Amahan')
 @login_required
@@ -802,7 +1556,21 @@ def akoang_amahan():
         "english_text": "My father",
         "back_url": "/basicBack"
     }
-    return render_template('tutor_template.html', **data)
+    user = loadJson(session.get('username'))
+    progress_data = user.get('progress', {})
+
+    completed = []
+    not_completed = []
+
+    for phrase in syllable_map.keys():
+        progress_string = progress_data.get(phrase)
+
+        if progress_string and "2" not in progress_string:
+            completed.append(phrase)
+        else:
+            not_completed.append(phrase)
+    return render_template('tutor_template.html', **data, completed=completed, not_completed=not_completed)
+
 @app.route('/Akoa_Nang_Anak')
 @login_required
 def akoa_nang_anak():
@@ -812,7 +1580,20 @@ def akoa_nang_anak():
         "english_text": "That is my child",
         "back_url": "/basicBack"
     }
-    return render_template('tutor_template.html', **data)
+    user = loadJson(session.get('username'))
+    progress_data = user.get('progress', {})
+
+    completed = []
+    not_completed = []
+
+    for phrase in syllable_map.keys():
+        progress_string = progress_data.get(phrase)
+
+        if progress_string and "2" not in progress_string:
+            completed.append(phrase)
+        else:
+            not_completed.append(phrase)
+    return render_template('tutor_template.html', **data, completed=completed, not_completed=not_completed)
 
 @app.route('/Akoa_Nang_Inahan')
 @login_required
@@ -823,7 +1604,20 @@ def akoa_nang_inahan():
         "english_text": "That is my mother",
         "back_url": "/basicBack"
     }
-    return render_template('tutor_template.html', **data)
+    user = loadJson(session.get('username'))
+    progress_data = user.get('progress', {})
+
+    completed = []
+    not_completed = []
+
+    for phrase in syllable_map.keys():
+        progress_string = progress_data.get(phrase)
+
+        if progress_string and "2" not in progress_string:
+            completed.append(phrase)
+        else:
+            not_completed.append(phrase)
+    return render_template('tutor_template.html', **data, completed=completed, not_completed=not_completed)
 
 @app.route('/Iyaha_Ning_Bana')
 @login_required
@@ -834,7 +1628,20 @@ def iyaha_ning_bana():
         "english_text": "This is his/her husband",
         "back_url": "/basicBack"
     }
-    return render_template('tutor_template.html', **data)
+    user = loadJson(session.get('username'))
+    progress_data = user.get('progress', {})
+
+    completed = []
+    not_completed = []
+
+    for phrase in syllable_map.keys():
+        progress_string = progress_data.get(phrase)
+
+        if progress_string and "2" not in progress_string:
+            completed.append(phrase)
+        else:
+            not_completed.append(phrase)
+    return render_template('tutor_template.html', **data, completed=completed, not_completed=not_completed)
 
 @app.route('/Siya_Ang_Akoang_Asawa')
 @login_required
@@ -845,7 +1652,20 @@ def siya_ang_akoang_asawa():
         "english_text": "She is my wife",
         "back_url": "/basicBack"
     }
-    return render_template('tutor_template.html', **data)
+    user = loadJson(session.get('username'))
+    progress_data = user.get('progress', {})
+
+    completed = []
+    not_completed = []
+
+    for phrase in syllable_map.keys():
+        progress_string = progress_data.get(phrase)
+
+        if progress_string and "2" not in progress_string:
+            completed.append(phrase)
+        else:
+            not_completed.append(phrase)
+    return render_template('tutor_template.html', **data, completed=completed, not_completed=not_completed)
 
 @app.route('/Sila_Akoang_Mga_Anak')
 @login_required
@@ -856,7 +1676,20 @@ def sila_akoang_mga_anak():
         "english_text": "They are my children",
         "back_url": "/basicBack"
     }
-    return render_template('tutor_template.html', **data)
+    user = loadJson(session.get('username'))
+    progress_data = user.get('progress', {})
+
+    completed = []
+    not_completed = []
+
+    for phrase in syllable_map.keys():
+        progress_string = progress_data.get(phrase)
+
+        if progress_string and "2" not in progress_string:
+            completed.append(phrase)
+        else:
+            not_completed.append(phrase)
+    return render_template('tutor_template.html', **data, completed=completed, not_completed=not_completed)
 
 @app.route('/load', methods=['POST'])
 @login_required
@@ -911,7 +1744,15 @@ def upload_audio():
     print(result_file)
     try:
         with open(result_file, 'r') as f:
-            color_code = f.read().strip()
+            lines = f.readlines()
+            if len(lines) < 4:
+                return 'Incomplete result file', 500
+
+            color_code = lines[0].strip()                       
+            output_text = lines[1].strip()              
+            expected_stress = lines[2].strip() 
+            received_stress = lines[3].strip()                
+
     except FileNotFoundError:
         return 'Result file not found', 500
     
@@ -924,6 +1765,9 @@ def upload_audio():
     return jsonify({
         "message": "Audio uploaded and script executed successfully",
         "color_code": color_code,
+        "output_text": output_text,
+        "expected_stress": expected_stress,
+        "received_stress": received_stress,
         "syllables": syllables
     })
 

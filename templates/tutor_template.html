@@ -31,7 +31,12 @@
         <button class="stop-button" id="stopBtn" style="display: none;">Stop</button>
         <a href="{{ back_url }}" class="button">Back</a>
     </div>
-
+    <div class="result-container" id="result" style="display: none;">
+        <div class="label">Results</div>
+        <div class="output" id="outputText">What Was Heard: <span>{{ output_text or '' }}</span></div>
+    <div class="stress" id="expectedStress">Expected Stress: <span>{{ expected_stress or '' }}</span></div>
+    <div class="stress" id="receivedStress">Received Stress: <span>{{ actual_stress or '' }}</span></div>
+    </div>
     <script src="/static/record.js"></script>
 </body>
 </html>

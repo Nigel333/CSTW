@@ -1,0 +1,15 @@
+{% if session.get('username') %}
+   <h3>Checklist</h3>
+   <h5>Not Finished</h5>
+   <ul>
+        {% for phrase in not_completed %}
+            <li>{{ phrase.replace('_', ' ') }}</li>
+        {% endfor %}
+    </ul>
+    <h5>Finished</h5>
+    <ul>
+        {% for phrase in completed %}
+            <li>{{ phrase.replace('_', ' ') }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}

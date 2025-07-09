@@ -1,5 +1,24 @@
 {% if session.get('username') %}
 <p class="user-bar">
-    Welcome, {{ session.get('username') }} <a class="button" href="/logout">Logout</a>
+    Welcome, {{ session.get('username') }} 
+    <button id="checklistBtn" class="button">Checklist</button>
+    <a class="button" href="/logout">Logout</a>
 </p>
+<div id="checklistModal" class="modal">
+    <div class="modal-content">
+        <h3>Not Finished</h3>
+        <ul>
+            {% for phrase in not_completed %}
+                <li>{{ phrase.replace('_', ' ') }}</li>
+            {% endfor %}
+        </ul>
+
+        <h3>Completed</h3>
+        <ul>
+            {% for phrase in completed %}
+                <li>{{ phrase.replace('_', ' ') }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
 {% endif %}
