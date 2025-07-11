@@ -34,8 +34,16 @@
     <div class="result-container" id="result" style="display: none;">
         <div class="label">Results</div>
         <div class="output" id="outputText">What Was Heard: <span>{{ output_text or '' }}</span></div>
-    <div class="stress" id="expectedStress">Expected Stress: <span>{{ expected_stress or '' }}</span></div>
-    <div class="stress" id="receivedStress">Received Stress: <span>{{ actual_stress or '' }}</span></div>
+        <div class="stress" id="expectedStress">Expected Stress: <span>{{ expected_stress or '' }}</span></div>
+        <div class="stress" id="receivedStress">Received Stress: <span>{{ actual_stress or '' }}</span></div>
+    </div>
+    <div class="help-container" id="help" style="display: none;">
+        <div class="label" id="attempts"><br>Hi we noticed you've tried <span>{{ attempts or '' }}</span> times with no success,<br> click on the button below to hear another sample audio</div>
+        <span class="speaker-icon" onclick="document.getElementById('SampleAudio2').play()">🔊</span>
+        <audio id="SampleAudio2">
+                <source src="{{ url_for('processed_audio', filename=audio_file2) }}" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
     </div>
     <script src="/static/record.js"></script>
 </body>

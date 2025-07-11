@@ -419,6 +419,7 @@ def basicBack():
 def maayong_buntag():
     data = {
         "audio_file": "Maayong_Buntag.webm",
+        "audio_file2": "Maayong_Buntag2.webm",
         "cebuano_text": "Maayong Buntag!",
         "english_text": "Good Morning!",
         "back_url": "/greetingsBack"
@@ -1729,7 +1730,6 @@ def upload_audio():
     file.save(filepath)
     logger.info(f"Data by user [{name}] saved: {filepath}")
     
-    
     # Insert model response maker script code here
     try:
         subprocess.run(f"./run.sh {name} {filepath}", check=True, shell=True)
@@ -1738,7 +1738,6 @@ def upload_audio():
         print(f"Error running script: {e}")
         return f"Error running script: {e}", 500
     
-
     # RESULT FILE SHOULD BE {user}_result.txt or any way to specify responses to correct user, to be corrected
     result_file = os.path.join('results/', f"{name}_{page_name}.txt") 
     print(result_file)
@@ -1751,8 +1750,9 @@ def upload_audio():
             color_code = lines[0].strip()                       
             output_text = lines[1].strip()              
             expected_stress = lines[2].strip() 
-            received_stress = lines[3].strip()                
-
+            received_stress = lines[3].strip()  
+            attempts = int(lines[4].strip())               
+            print(f"Color code: {color_code}, Output text: {output_text}, Expected stress: {expected_stress}, Received stress: {received_stress}, Attempts: {attempts}")
     except FileNotFoundError:
         return 'Result file not found', 500
     
@@ -1768,6 +1768,7 @@ def upload_audio():
         "output_text": output_text,
         "expected_stress": expected_stress,
         "received_stress": received_stress,
+        "attempts": attempts,
         "syllables": syllables
     })
 

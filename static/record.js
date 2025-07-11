@@ -12,6 +12,9 @@ const outputTextEl = document.querySelector("#outputText span");
 const expectedStressEl = document.querySelector("#expectedStress span");
 const receivedStressEl = document.querySelector("#receivedStress span");
 const result = document.getElementById('result');
+const helpContainer = document.getElementById('help');
+const attemptsEl = document.querySelector("#attempts span");
+
 if (phraseEl) {
     const phrase = phraseEl.textContent.replace(/ /g, '_').replace(/[?!]/g, '');
     const userData = new FormData();
@@ -92,6 +95,10 @@ if (nextBtn) {
                         if (outputTextEl) outputTextEl.textContent = data.output_text || '';
                         if (expectedStressEl) expectedStressEl.textContent = data.expected_stress || '';
                         if (receivedStressEl) receivedStressEl.textContent = data.received_stress || '';
+                        if(parseInt(data.attempts) >= 3 ){
+                            attemptsEl.textContent = data.attempts || '';
+                            helpContainer.style.display = 'block';
+                        } 
                     }
                 })
                 .catch(error => {
