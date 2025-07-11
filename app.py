@@ -444,6 +444,7 @@ def maayong_buntag():
 def maayong_udto():
     data = {
         "audio_file": "Maayong_Udto.webm",
+        "audio_file2": "Maayong_Udto2.webm",
         "cebuano_text": "Maayong Udto!",
         "english_text": "Good Noon!",
         "back_url": "/greetingsBack"
@@ -468,6 +469,7 @@ def maayong_udto():
 def maayong_hapon():
     data = {
         "audio_file": "Maayong_Hapon.webm",
+        "audio_file2": "Maayong_Hapon2.webm",
         "cebuano_text": "Maayong Hapon!",
         "english_text": "Good Afternoon!",
         "back_url": "/greetingsBack"
@@ -492,6 +494,7 @@ def maayong_hapon():
 def maayong_gabii():
     data = {
         "audio_file": "Maayong_Gabii.webm",
+         "audio_file2": "Maayong_Gabii2.webm",
         "cebuano_text": "Maayong Gabii!",
         "english_text": "Good Night!",
         "back_url": "/greetingsBack"
@@ -516,6 +519,7 @@ def maayong_gabii():
 def maayong_adlaw():
     data = {
         "audio_file": "Maayong_Adlaw.webm",
+        "audio_file2": "Maayong_Adlaw2.webm",
         "cebuano_text": "Maayong Adlaw!",
         "english_text": "Good Day!",
         "back_url": "/greetingsBack"
@@ -541,6 +545,7 @@ def kumusta_ka():
     audio_file = "Kumusta_Ka.webm"
     data = {
         "audio_file": "Kumusta_Ka.webm",
+        "audio_file2": "Kumusta_Ka2.webm",
         "cebuano_text": "Kumusta Ka?",
         "english_text": "How are you?",
         "back_url": "/greetingsBack"
@@ -566,6 +571,7 @@ def kumusta_ka():
 def didto():
     data = {
         "audio_file": "Didto.webm",
+        "audio_file2": "Didto2.webm",
         "cebuano_text": "Didto",
         "english_text": "Over there (far)",
         "back_url": "/directionsBack"
@@ -590,6 +596,7 @@ def didto():
 def dani():
     data = {
         "audio_file": "Dani.webm",
+        "audio_file2": "Dani2.webm",
         "cebuano_text": "Dani",
         "english_text": "Here",
         "back_url": "/directionsBack"
@@ -614,6 +621,7 @@ def dani():
 def wala():
     data = {
         "audio_file": "Wala.webm",
+        "audio_file2": "Wala2.webm",
         "cebuano_text": "Wala",
         "english_text": "Left",
         "back_url": "/directionsBack"
@@ -638,6 +646,7 @@ def wala():
 def too():
     data = {
         "audio_file": "Too.webm",
+        "audio_file2": "Too2.webm",
         "cebuano_text": "Too",
         "english_text": "Right",
         "back_url": "/directionsBack"
@@ -662,6 +671,7 @@ def too():
 def asa_ang():
     data = {
         "audio_file": "Asa_Ang.webm",
+        "audio_file2": "Asa_Ang2.webm",
         "cebuano_text": "Asa Ang",
         "english_text": "Where is",
         "back_url": "/directionsBack"
@@ -686,6 +696,7 @@ def asa_ang():
 def taas():
     data = {
         "audio_file": "Taas.webm",
+        "audio_file2": "Taas2.webm",
         "cebuano_text": "Taas",
         "english_text": "Up",
         "back_url": "/directionsBack"
@@ -710,6 +721,7 @@ def taas():
 def ubos():
     data = {
         "audio_file": "Ubos.webm",
+        "audio_file2": "Ubos2.webm",
         "cebuano_text": "Ubos",
         "english_text": "Down",
         "back_url": "/directionsBack"
@@ -734,6 +746,7 @@ def ubos():
 def atubangan():
     data = {
         "audio_file": "Atubangan.webm",
+        "audio_file2": "Atubangan2.webm",
         "cebuano_text": "Atubangan",
         "english_text": "In front",
         "back_url": "/directionsBack"
@@ -758,6 +771,7 @@ def atubangan():
 def likod():
     data = {
         "audio_file": "Likod.webm",
+        "audio_file2": "Likod2.webm",
         "cebuano_text": "Likod",
         "english_text": "Behind",
         "back_url": "/directionsBack"
@@ -783,6 +797,7 @@ def likod():
 def ikaw():
     data = {
         "audio_file": "Ikaw.webm",
+        "audio_file2": "Ikaw2.webm",
         "cebuano_text": "Ikaw",
         "english_text": "You",
         "back_url": "/peopleBack"
@@ -807,6 +822,7 @@ def ikaw():
 def ako():
     data = {
         "audio_file": "Ako.webm",
+        "audio_file2": "Ako2.webm",
         "cebuano_text": "Ako",
         "english_text": "Me/I",
         "back_url": "/peopleBack"
@@ -831,6 +847,7 @@ def ako():
 def siya():
     data = {
         "audio_file": "Siya.webm",
+        "audio_file2": "Siya2.webm",
         "cebuano_text": "Siya",
         "english_text": "He/She",
         "back_url": "/peopleBack"
@@ -855,6 +872,7 @@ def siya():
 def sila():
     data = {
         "audio_file": "Sila.webm",
+        "audio_file2": "Sila2.webm",
         "cebuano_text": "Sila",
         "english_text": "They/Them",
         "back_url": "/peopleBack"
@@ -879,6 +897,7 @@ def sila():
 def imoha():
     data = {
         "audio_file": "Imoha.webm",
+        "audio_file2": "Imoha2.webm",
         "cebuano_text": "Imoha",
         "english_text": "Yours",
         "back_url": "/peopleBack"
@@ -903,6 +922,7 @@ def imoha():
 def imohang():
     data = {
         "audio_file": "Imohang.webm",
+        "audio_file2": "Imohang2.webm",
         "cebuano_text": "Imohang",
         "english_text": "Your",
         "back_url": "/peopleBack"
@@ -927,6 +947,7 @@ def imohang():
 def akoa():
     data = {
         "audio_file": "Akoa.webm",
+        "audio_file2": "Akoa2.webm",
         "cebuano_text": "Akoa",
         "english_text": "Mine",
         "back_url": "/peopleBack"
@@ -951,6 +972,7 @@ def akoa():
 def akoang():
     data = {
         "audio_file": "Akoang.webm",
+        "audio_file2": "Akoang2.webm",
         "cebuano_text": "Akoang",
         "english_text": "My",
         "back_url": "/peopleBack"
@@ -975,6 +997,7 @@ def akoang():
 def anak():
     data = {
         "audio_file": "Anak.webm",
+        "audio_file2": "Anak2.webm",
         "cebuano_text": "Anak",
         "english_text": "Son/Daughter",
         "back_url": "/peopleBack"
@@ -999,6 +1022,7 @@ def anak():
 def bata():
     data = {
         "audio_file": "Bata.webm",
+        "audio_file2": "Bata2.webm",
         "cebuano_text": "Bata",
         "english_text": "Child",
         "back_url": "/peopleBack"
@@ -1023,6 +1047,7 @@ def bata():
 def inahan():
     data = {
         "audio_file": "Inahan.webm",
+        "audio_file2": "Inahan2.webm",
         "cebuano_text": "Inahan",
         "english_text": "Mother",
         "back_url": "/peopleBack"
@@ -1047,6 +1072,7 @@ def inahan():
 def amahan():
     data = {
         "audio_file": "Amahan.webm",
+        "audio_file2": "Amahan2.webm",
         "cebuano_text": "Amahan",
         "english_text": "Father",
         "back_url": "/peopleBack"
@@ -1071,6 +1097,7 @@ def amahan():
 def bana():
     data = {
         "audio_file": "Bana.webm",
+        "audio_file2": "Bana2.webm",
         "cebuano_text": "Bana",
         "english_text": "Husband",
         "back_url": "/peopleBack"
@@ -1095,6 +1122,7 @@ def bana():
 def asawa():
     data = {
         "audio_file": "Asawa.webm",
+        "audio_file2": "Asawa2.webm",
         "cebuano_text": "Asawa",
         "english_text": "Wife",
         "back_url": "/peopleBack"
@@ -1120,6 +1148,7 @@ def asawa():
 def wala_none():
     data = {
         "audio_file": "Wala_None.webm",
+        "audio_file2": "Wala_None2.webm",
         "cebuano_text": "Wala",
         "english_text": "None",
         "back_url": "/numbersBack"
@@ -1144,6 +1173,7 @@ def wala_none():
 def isa():
     data = {
         "audio_file": "Isa.webm",
+        "audio_file2": "Isa2.webm",
         "cebuano_text": "Isa",
         "english_text": "One",
         "back_url": "/numbersBack"
@@ -1168,6 +1198,7 @@ def isa():
 def duha():
     data = {
         "audio_file": "Duha.webm",
+        "audio_file2": "Duha2.webm",
         "cebuano_text": "Duha",
         "english_text": "Two",
         "back_url": "/numbersBack"
@@ -1192,6 +1223,7 @@ def duha():
 def tulo():
     data = {
         "audio_file": "Tulo.webm",
+        "audio_file2": "Tulo2.webm",
         "cebuano_text": "Tulo",
         "english_text": "Three",
         "back_url": "/numbersBack"
@@ -1216,6 +1248,7 @@ def tulo():
 def upat():
     data = {
         "audio_file": "Upat.webm",
+        "audio_file2": "Upat2.webm",
         "cebuano_text": "Upat",
         "english_text": "Four",
         "back_url": "/numbersBack"
@@ -1240,6 +1273,7 @@ def upat():
 def lima():
     data = {
         "audio_file": "Lima.webm",
+        "audio_file2": "Lima2.webm",
         "cebuano_text": "Lima",
         "english_text": "Five",
         "back_url": "/numbersBack"
@@ -1264,6 +1298,7 @@ def lima():
 def unom():
     data = {
         "audio_file": "Unom.webm",
+        "audio_file2": "Unom2.webm",
         "cebuano_text": "Unom",
         "english_text": "Six",
         "back_url": "/numbersBack"
@@ -1288,6 +1323,7 @@ def unom():
 def pito():
     data = {
         "audio_file": "Pito.webm",
+        "audio_file2": "Pito2.webm",
         "cebuano_text": "Pito",
         "english_text": "Seven",
         "back_url": "/numbersBack"
@@ -1312,6 +1348,7 @@ def pito():
 def walo():
     data = {
         "audio_file": "Walo.webm",
+        "audio_file2": "Walo2.webm",
         "cebuano_text": "Walo",
         "english_text": "Eight",
         "back_url": "/numbersBack"
@@ -1336,6 +1373,7 @@ def walo():
 def siyam():
     data = {
         "audio_file": "Siyam.webm",
+        "audio_file2": "Siyam2.webm",
         "cebuano_text": "Siyam",
         "english_text": "Nine",
         "back_url": "/numbersBack"
@@ -1360,6 +1398,7 @@ def siyam():
 def napulo():
     data = {
         "audio_file": "Napulo.webm",
+        "audio_file2": "Napulo2.webm",
         "cebuano_text": "Napulo",
         "english_text": "Ten",
         "back_url": "/numbersBack"
@@ -1384,6 +1423,7 @@ def napulo():
 def tanan():
     data = {
         "audio_file": "Tanan.webm",
+        "audio_file2": "Tanan2.webm",
         "cebuano_text": "Tanan",
         "english_text": "All",
         "back_url": "/numbersBack"
@@ -1409,6 +1449,7 @@ def tanan():
 def kabalo_ka_mag_tagalog():
     data = {
         "audio_file": "Kabalo_Ka_Mag_Tagalog.webm",
+        "audio_file2": "Kabalo_Ka_Mag_Tagalog2.webm",
         "cebuano_text": "Kabalo Ka Mag Tagalog?",
         "english_text": "Can you speak Tagalog?",
         "back_url": "/basicBack"
@@ -1433,6 +1474,7 @@ def kabalo_ka_mag_tagalog():
 def kabalo_ka_mag_english():
     data = {
         "audio_file": "Kabalo_Ka_Mag_English.webm",
+        "audio_file2": "Kabalo_Ka_Mag_English2.webm",
         "cebuano_text": "Kabalo Ka Mag English?",
         "english_text": "Can you speak English?",
         "back_url": "/basicBack"
@@ -1457,6 +1499,7 @@ def kabalo_ka_mag_english():
 def palihog():
     data = {
         "audio_file": "Pahilog.webm",
+        "audio_file2": "Pahilog2.webm",
         "cebuano_text": "Pahilog",
         "english_text": "Please/Request",
         "back_url": "/basicBack"
@@ -1481,6 +1524,7 @@ def palihog():
 def mangayo_ko_ug_menu():
     data = {
         "audio_file": "Mangayo_Ko_Ug_Menu.webm",
+        "audio_file2": "Mangayo_Ko_Ug_Menu2.webm",
         "cebuano_text": "Mangayo Ko Ug Menu",
         "english_text": "I'd like the menu",
         "back_url": "/basicBack"
@@ -1505,6 +1549,7 @@ def mangayo_ko_ug_menu():
 def palihog_ko_ug_menu():
     data = {
         "audio_file": "Palihog_Ko_Ug_Menu.webm",
+        "audio_file2": "Palihog_Ko_Ug_Menu2.webm",
         "cebuano_text": "Pahilog Ko Ug Menu",
         "english_text": "Please hand me the menu",
         "back_url": "/basicBack"
@@ -1529,6 +1574,7 @@ def palihog_ko_ug_menu():
 def akoang_anak():
     data = {
         "audio_file": "Akoang_Anak.webm",
+        "audio_file2": "Akoang_Anak2.webm",
         "cebuano_text": "Akoang Anak",
         "english_text": "My child",
         "back_url": "/basicBack"
@@ -1553,6 +1599,7 @@ def akoang_anak():
 def akoang_amahan():
     data = {
         "audio_file": "Akoang_Amahan.webm",
+        "audio_file2": "Akoang_Amahan2.webm",
         "cebuano_text": "Akoang Amahan",
         "english_text": "My father",
         "back_url": "/basicBack"
@@ -1577,6 +1624,7 @@ def akoang_amahan():
 def akoa_nang_anak():
     data = {
         "audio_file": "Akoa_Nang_Anak.webm",
+        "audio_file2": "Akoa_Nang_Anak2.webm",
         "cebuano_text": "Akoa Nang Anak",
         "english_text": "That is my child",
         "back_url": "/basicBack"
@@ -1601,6 +1649,7 @@ def akoa_nang_anak():
 def akoa_nang_inahan():
     data = {
         "audio_file": "Akoa_Nang_Inahan.webm",
+        "audio_file2": "Akoa_Nang_Inahan2.webm",
         "cebuano_text": "Akoa Nang Inahan",
         "english_text": "That is my mother",
         "back_url": "/basicBack"
@@ -1625,6 +1674,7 @@ def akoa_nang_inahan():
 def iyaha_ning_bana():
     data = {
         "audio_file": "Iyaha_Ning_Bana.webm",
+        "audio_file2": "Iyaha_Ning_Bana2.webm",
         "cebuano_text": "Iyaha Ning Bana",
         "english_text": "This is his/her husband",
         "back_url": "/basicBack"
@@ -1649,6 +1699,7 @@ def iyaha_ning_bana():
 def siya_ang_akoang_asawa():
     data = {
         "audio_file": "Siya_Ang_Akoang_Asawa.webm",
+        "audio_file2": "Siya_Ang_Akoang_Asawa2.webm",
         "cebuano_text": "Siya Ang Akoang Asawa",
         "english_text": "She is my wife",
         "back_url": "/basicBack"
@@ -1673,6 +1724,7 @@ def siya_ang_akoang_asawa():
 def sila_akoang_mga_anak():
     data = {
         "audio_file": "Sila_Akoang_Mga_Anak.webm",
+        "audio_file2": "Sila_Akoang_Mga_Anak2.webm",
         "cebuano_text": "Sila Akoang Mga Anak",
         "english_text": "They are my children",
         "back_url": "/basicBack"
@@ -1752,7 +1804,7 @@ def upload_audio():
             expected_stress = lines[2].strip() 
             received_stress = lines[3].strip()  
             attempts = int(lines[4].strip())               
-            print(f"Color code: {color_code}, Output text: {output_text}, Expected stress: {expected_stress}, Received stress: {received_stress}, Attempts: {attempts}")
+            # print(f"Color code: {color_code}, Output text: {output_text}, Expected stress: {expected_stress}, Received stress: {received_stress}, Attempts: {attempts}")
     except FileNotFoundError:
         return 'Result file not found', 500
     
