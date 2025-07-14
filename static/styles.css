@@ -185,3 +185,33 @@ body {
     display: inline-block;
     margin-top: 10px;
 }
+.legend-container {
+    position: fixed;
+    right: 30px;
+    top: 150px;
+    background-color: white;
+    color: black;
+    padding: 15px 15px;
+    border-radius: 10px;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    z-index: 999;
+}
+.legend-color {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+    border-radius: 4px;
+    vertical-align: middle;
+}
+.legend-color.green {
+    background-color: #00cc66;
+}
+.legend-color.red {
+    background-color: #ff3333;
+}
+.legend-color.yellow {
+    background-color: #ffcc00;
+}
